@@ -1,0 +1,35 @@
+<%- include layouts/header.ejs %>
+
+<div class="page-data">
+
+
+    <table cellpadding="11">
+        <tr>
+            <td class="label">Block ID</td><td>: <%=data[0].id%></td>
+        </tr>
+        <tr>
+            <td class="label" valign="top">Bank ID</td><td>:<%=data[0].bank_id%></td>
+        </tr>
+        <tr>
+            <td class="label" valign="top">Hash</td><td>:<%=data[0].hash%></td>
+        </tr>
+        <tr>
+            <td class="label" valign="top">Merkle Root</td><td>:<%=data[0].merkle_root%></td>
+        </tr>
+        <tr>
+            <td class="label" valign="top">Pre-Hash</td><td>:<%=data[0].pre_hash%></td>
+        </tr>
+        <tr>
+            <td class="label" valign="top">Signatures</td><td>:<%=data[0].signatures%></td>
+        </tr>
+        <tr>
+            <td class="label" valign="top">Created</td><td>:<%=data[0].timestamp%></td>
+        </tr>
+
+
+    </table>
+
+
+</div>
+
+<%- include layouts/footer.ejs %>

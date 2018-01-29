@@ -1,0 +1,50 @@
+<%- include layouts/header.ejs %>
+
+<div class="page-data">
+    <div class="data-table">
+
+
+        <table border="1" cellpadding="7" cellspacing="7">
+            <tr>
+                <th>Cheque ID</th>
+                <th>Bank ID</th>
+                <th>Date</th>
+                <th>Cheque Amount</th>
+            </tr>
+
+            <% if(data.length){
+
+            for(var i = 0;i < data.length;i++) { %>
+
+            <tr>
+                <td><%=data[i].id%></td>
+                <td><%=data[i].bank_id%></td>
+                <td><%=data[i].date%></td>
+                <td><%=data[i].amount%></td>
+
+                <td>
+                    <a class="a-inside edit" href="/chequeview/<%=data[i].id%>">View</a>
+               <!--     <a class="a-inside edit" href="/allcheques_next/'<%=data[data.length-1].bank_id%>'">Next</a>-->
+                </td>
+            </tr>
+
+
+            <% }
+            %> <tr><td><a class="a-inside edit" href="/allcheques_next/'<%=data[data.length-1].bank_id%>'">Next</a>
+                    <a class="a-inside edit" href="/allcheques_previous/'<%=data[0].bank_id%>'">Previous</a></td></tr> <%
+
+            }
+
+
+            else{ %>
+            <tr>
+                <td colspan="6">No data available</td>
+            </tr>
+            <% } %>
+
+        </table>
+    </div>
+</div>
+
+
+<%- include layouts/footer.ejs %>

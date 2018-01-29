@@ -1,0 +1,26 @@
+<%- include layouts/header.ejs %>
+
+<div class="page-data">
+
+
+        <table cellpadding="11">
+            <tr>
+                <td class="label">Cheque ID</td><td>: <%=data[0].id%></td>
+            </tr>
+            <tr>
+                <td class="label" valign="top">Bank ID</td><td>:<%=data[0].bank_id%></td>
+            </tr>
+            <tr>
+                <td class="label" valign="top">Amount</td><td>:<%=data[0].amount%></td>
+            </tr>
+            <tr>
+                <td class="label" valign="top">Date</td><td>:<%=data[0].date%></td>
+            </tr>
+
+
+        </table>
+
+
+</div>
+
+<%- include layouts/footer.ejs %>
