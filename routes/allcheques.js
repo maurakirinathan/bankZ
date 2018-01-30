@@ -61,7 +61,6 @@ exports.list = function (req, res) {
             res.render('allcheques', {page_title: "BANK Z", data: result.rows})
         }
     });
-
 };
 
 /*
@@ -78,10 +77,13 @@ exports.list_one = function (req, res) {
             res.status(404).send({msg: err});
         } else {
             console.log('cheques: viewing one succ:');
-            res.render('chequeViewOne', {page_title: "cheques Details", data: result.rows});
+            res.render('chequeViewOne', {page_title: "Cheques Details", data: result.rows});
         }
     });
 
 };
+
+
+
 
 //SELECT * FROM cheques where token(bank_id) > token('test4') LIMIT  2;

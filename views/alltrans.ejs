@@ -1,19 +1,13 @@
-<%- include layouts/header.ejs %>
-
 <div class="page-data">
-
-
-    <div style="float: right;">
-        <input type="text" placeholder="Search.." >
-        <button type="submit" href=""><i class="fa fa-search"></i></button>
-    </div>
-
     <div class="data-table">
         <table border="1" cellpadding="7" cellspacing="7">
             <tr>
-                <th>Block ID</th>
+                <th>Transaction ID</th>
+                <th>Bank ID</th>
+                <th>Check Amount</th>
+                <th>Check ID</th>
+                <th>From ACC</th>
                 <th>Created@</th>
-                <th>Transaction Count</th>
             </tr>
 
             <% if(data.length){
@@ -21,13 +15,16 @@
             for(var i = 0;i < data.length;i++) { %>
 
             <tr>
-                <td><%= data[i].hash %></td>
+                <td><%= data[i].id %></td>
+                <td><%= data[i].bank_id %></td>
+                <td><%= data[i].cheque_amount %></td>
+                <td><%= data[i].cheque_id %></td>
+                <td><%= data[i].from_acc %></td>
                 <td><%= data[i].timestamp %></td>
-                <td><%= data[i].transactions %></td>
-
                 <td>
-                    <a class="a-inside edit" href="/allblocks/<%= data[i].id %>">View</a>
+                    <a class="a-inside edit" href="/transview/<%=data[i].id%>">View</a>
                 </td>
+
             </tr>
             <% }
 
@@ -40,6 +37,3 @@
         </table>
     </div>
 </div>
-
-
-<%- include layouts/footer.ejs %>

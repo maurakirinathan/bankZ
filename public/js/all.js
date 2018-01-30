@@ -6,3 +6,4 @@ function cancelAdd(){
 
     window.location.href = '/customers';
 }
+
