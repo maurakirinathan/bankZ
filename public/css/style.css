@@ -136,3 +136,14 @@ textarea{ border:1px solid #ddd;width:296px;}
     }
 }
 #footer{}
+
+
+/* used for rotate iamge base64*/
+
+.rotate90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}

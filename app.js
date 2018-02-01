@@ -30,7 +30,7 @@ var cassandra = require('cassandra-driver');
 const client = new cassandra.Client({contactPoints: ['localhost:9042'], keyspace: 'ks1' });
 
 // all environments
-app.set('port', process.env.PORT || 8083);
+app.set('port', process.env.PORT || 8081);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.logger('dev'));
@@ -42,20 +42,26 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /*app.get('/', routes.index);*/
 //---------------------------------------
-//app.get('/', allblocks.list);
+app.get('/', allblocks.list);
 app.get('/allblocks',allblocks.list);
 app.get('/allblocks/:id',allblocks.list_one);
-app.get('/allblocks_search/:id',allblocks.list_search);
+app.post('/allblocks_search',allblocks.list_search);
 app.get('/pendingTransaction',pendingTransaction.list);
 app.get('/allcheques',allcheques.list);
 app.get('/allcheques_previous/:bank_id',allcheques.list_paging_previous);
 app.get('/allcheques_next/:bank_id',allcheques.list_paging_next);
 app.get('/chequeview/:id',allcheques.list_one);
+app.post('/allCheque_search',allcheques.list_search);
+
 app.get('/alltrans',alltrans.list_trans);
 app.get('/pendingTransaction/:id',pendingTransaction.list_one);
+app.post('/pendingTransaction_search',pendingTransaction.list_search);
+
+
+
 app.get('/cassandrainfo', cassandrainfo.init_cassandra);
 app.get('/transview/:id',alltrans.list_one);
-app.get('/', routes.index);
+//app.get('/', routes.index);
 
 
 //----------------------------

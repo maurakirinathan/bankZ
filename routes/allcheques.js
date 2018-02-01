@@ -20,6 +20,7 @@ exports.list_paging_next = function (req, res) {
         } else {
             console.log('allcheques1: list succ:', result.rows);
             res.render('allcheques', {page_title: "BANK Z", data: result.rows})
+//console.log("object  "+ result.rows);
         }
     });
 
@@ -77,13 +78,44 @@ exports.list_one = function (req, res) {
             res.status(404).send({msg: err});
         } else {
             console.log('cheques: viewing one succ:');
-            res.render('chequeViewOne', {page_title: "Cheques Details", data: result.rows});
+            res.render('chequeViewOne', {page_title: "Cheque Details", data: result.rows});
         }
     });
 
 };
 
 
+/*
+ * GET one block.
+ */
+exports.list_search = function (req, res) {
 
+    // var id = req.params.id;
+    var input = JSON.parse(JSON.stringify(req.body));
+
+    var validate = require('uuid-validate');
+
+
+    console.log(input);
+    console.log('cheques: list_search');
+    if (validate(input.id)) {
+        client.execute("SELECT * from cheques WHERE id = " + input.id + " ALLOW FILTERING", [], function (err, result) {
+            if (err) {
+                console.log('cheques: search one err:', err);
+                res.status(404).send({msg: err});
+                res.render('allcheques', {page_title: "Cheques Details",});
+                //  allblocks();
+            } else {
+                console.log('block: search one succ:');
+                res.render('allcheques', {page_title: "Cheques Details", data: result.rows});
+            }
+        });
+    }
+    else
+    {
+        var result=[];
+        res.render('allcheques', {page_title: "Cheques Details", data:result});
+    }
+};
 
 //SELECT * FROM cheques where token(bank_id) > token('test4') LIMIT  2;

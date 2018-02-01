@@ -44,3 +44,36 @@ exports.list_one = function (req, res) {
 
 };
 
+/*
+ * GET one block.
+ */
+exports.list_search = function (req, res) {
+
+    // var id = req.params.id;
+    var input = JSON.parse(JSON.stringify(req.body));
+    var validate = require('uuid-validate');
+
+    console.log(input);
+    console.log('pending transaction: list_search');
+    if (validate(input.id)) {
+        client.execute("SELECT * from transactions WHERE id = " + input.id + " ALLOW FILTERING", [], function (err, result) {
+            if (err) {
+                console.log('pending transaction: search one err:', err);
+                res.status(404).send({msg: err});
+                res.render('pendingTransaction', {page_title: "Transaction Details",});
+                //  allblocks();
+            } else {
+                console.log('pending transaction: search one succ:');
+                res.render('pendingTransaction', {page_title: "Transaction Details", data: result.rows});
+            }
+        });
+    }
+    else
+    {
+        var result=[];
+        res.render('pendingTransaction', {page_title: "Transaction Details", data:result});
+
+    }
+};
+
+

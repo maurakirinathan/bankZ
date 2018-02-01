@@ -37,7 +37,7 @@ exports.list_one = function (req, res) {
             res.status(404).send({msg: err});
         } else {
             console.log('block: viewing one succ:');
-            res.render('blockViewOne', {page_title: "Bslock Details", data: result.rows});
+            res.render('blockViewOne', {page_title: "Block Details", data: result.rows});
         }
     });
 
@@ -49,17 +49,35 @@ exports.list_one = function (req, res) {
  */
 exports.list_search = function (req, res) {
 
-    var id = req.params.id;
-    console.log('block: viewing one');
+    // var id = req.params.id;
+    var input = JSON.parse(JSON.stringify(req.body));
 
-    client.execute("SELECT * from blocks WHERE id = " + id + " ALLOW FILTERING", [], function (err, result) {
-        if (err) {
-            console.log('block: viewing one err:', err);
-            res.status(404).send({msg: err});
-        } else {
-            console.log('block: viewing one succ:');
-            res.render('allblocks', {page_title: "Bslock Details", data: result.rows});
-        }
-    });
+    var validate = require('uuid-validate');
 
+
+        console.log(input);
+    console.log('block: list_search');
+    if (validate(input.id)) {
+        client.execute("SELECT * from blocks WHERE id = " + input.id + " ALLOW FILTERING", [], function (err, result) {
+            if (err) {
+                console.log('block: search one err:', err);
+                res.status(404).send({msg: err});
+                res.render('allblocks', {page_title: "Block Details",});
+                //  allblocks();
+            } else {
+                console.log('block: search one succ:');
+                res.render('allblocks', {page_title: "Block Details", data: result.rows});
+            }
+        });
+    }
+    else
+    {
+         var result=[];
+        res.render('allblocks', {page_title: "Block Details", data:result});
+    }
 };
+
+
+
+
+
