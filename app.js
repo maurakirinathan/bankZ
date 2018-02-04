@@ -42,7 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /*app.get('/', routes.index);*/
 //---------------------------------------
-app.get('/', allblocks.list);
+//app.get('/', allblocks.list);
 app.get('/allblocks',allblocks.list);
 app.get('/allblocks/:id',allblocks.list_one);
 app.post('/allblocks_search',allblocks.list_search);
@@ -61,7 +61,7 @@ app.post('/pendingTransaction_search',pendingTransaction.list_search);
 
 app.get('/cassandrainfo', cassandrainfo.init_cassandra);
 app.get('/transview/:id',alltrans.list_one);
-//app.get('/', routes.index);
+app.get('/', routes.index);
 
 
 //----------------------------

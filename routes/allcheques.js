@@ -13,7 +13,7 @@ exports.list_paging_next = function (req, res) {
     console.log('allcheques: list');
     var bank_id = req.params.bank_id;
      console.log('bank_id:', bank_id);
-    client.execute('SELECT * FROM cheques where token(bank_id) > token('+bank_id+') LIMIT 3', [], function (err, result) {
+    client.execute('SELECT * FROM cheques where token(bank_id) > token('+bank_id+') LIMIT 10', [], function (err, result) {
         if (err) {""
             console.log('allcheques: list err:', err);
             res.status(404).send({msg: err});
@@ -34,7 +34,7 @@ exports.list_paging_previous = function (req, res) {
     console.log('allcheques: list');
     var bank_id = req.params.bank_id;
       console.log('bank_id:', bank_id);
-    client.execute('SELECT * FROM cheques where token(bank_id) < token('+bank_id+') LIMIT 3', [], function (err, result) {
+    client.execute('SELECT * FROM cheques where token(bank_id) < token('+bank_id+') LIMIT 10', [], function (err, result) {
         if (err) {""
             console.log('allcheques: list err:', err);
             res.status(404).send({msg: err});
@@ -53,7 +53,7 @@ exports.list_paging_previous = function (req, res) {
 exports.list = function (req, res) {
 
     console.log('allcheques: list');
-    client.execute('SELECT * FROM cheques LIMIT 3', [], function (err, result) {
+    client.execute('SELECT * FROM cheques LIMIT 10', [], function (err, result) {
         if (err) {
             console.log('allcheques: list err:', err);
             res.status(404).send({msg: err});

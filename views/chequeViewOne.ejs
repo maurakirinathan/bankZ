@@ -1,4 +1,4 @@
-<%- include layouts/header.ejs %>
+-<%- include layouts/header.ejs %>
 
 <div class="page-data">
 
@@ -16,20 +16,14 @@
             <tr>
                 <td class="label" valign="top">Date</td><td>:<%=data[0].date%></td>
             </tr>
-            <tr>
-            </tr>
+         </table>
+</div>
 
-        </table>
-
-    <div align="center">
-        <img src="data:image/png;base64,<%=data[0].img%>" alt="Cheque Image" class="rotate90">
-    </div>
-
+<div align="center">
+    <img src="data:image/png;base64,<%=data[0].img%>" alt="Cheque Image" class="rotate90"  >
 
 </div>
 
-
-
 <%- include alltrans.ejs %>
-<!--<div w3-include-html="alltrans.ejs"></div>-->
+
 <%- include layouts/footer.ejs %>
