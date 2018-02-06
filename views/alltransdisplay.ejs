@@ -1,15 +1,19 @@
+
 <%- include layouts/header.ejs %>
 
+
+
 <div class="page-data">
+
+    <div style="float: right;">
+        <form method="post" action="/transection_search">
+            <input type="text" placeholder="Search by Transaction ID.." name="id" >
+            <button type="submit" ><i class="fa fa-search"></i></button>
+        </form>
+    </div>
     <div class="data-table">
-        <div style="float: right;">
-            <form method="post" action="/pendingTransaction_search">
-                <input type="text" placeholder="Search by TransactionTransaction ID.." name="id" >
-                <button type="submit" ><i class="fa fa-search"></i></button>
-            </form>
-        </div>
         <table border="1" cellpadding="7" cellspacing="7">
-            <lable ><b> Processing List</b></lable>
+            <lable ><b> Transaction List</b></lable>
             <tr>
                 <th>Transaction ID</th>
                 <th>Bank ID</th>
@@ -17,7 +21,7 @@
                 <th>Check ID</th>
                 <th>From ACC</th>
                 <th>Created@</th>
-                          <th></th>
+                <th></th>
             </tr>
 
             <% if(data.length){
@@ -32,7 +36,7 @@
                 <td><%= data[i].from_acc %></td>
                 <td><%= data[i].timestamp %></td>
                 <td>
-                    <a class="a-inside edit" href="/pendingTransaction/<%=data[i].id%>">View</a>
+                                <a class="a-inside edit" href="/transview/<%=data[i].id%>">View</a>
                 </td>
 
             </tr>
@@ -47,6 +51,5 @@
         </table>
     </div>
 </div>
-
 
 <%- include layouts/footer.ejs %>

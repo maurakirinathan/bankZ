@@ -30,7 +30,7 @@ var cassandra = require('cassandra-driver');
 const client = new cassandra.Client({contactPoints: ['localhost:9042'], keyspace: 'ks1' });
 
 // all environments
-app.set('port', process.env.PORT || 8081);
+app.set('port', process.env.PORT || 8083);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.logger('dev'));
@@ -54,6 +54,9 @@ app.get('/chequeview/:id',allcheques.list_one);
 app.post('/allCheque_search',allcheques.list_search);
 
 app.get('/alltrans',alltrans.list_trans);
+app.get('/alltrasdisplay',alltrans.list_trans_display);
+
+app.post('/transection_search',alltrans.list_search);
 app.get('/pendingTransaction/:id',pendingTransaction.list_one);
 app.post('/pendingTransaction_search',pendingTransaction.list_search);
 

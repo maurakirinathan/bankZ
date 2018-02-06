@@ -12,7 +12,8 @@
 
     <div class="data-table">
         <table border="1" cellpadding="7" cellspacing="7">
-            <tr>
+            <lable ><b> Block List</b></lable>
+            <tr >
                 <th>Block ID</th>
                 <th>Created@</th>
                 <th>Transaction Count</th>
@@ -24,7 +25,7 @@
             for(var i = 0;i < data.length;i++) { %>
 
             <tr>
-                <td><%= data[i].hash %></td>
+                <td><%= data[i].hash %> </td>
                 <td><%= data[i].timestamp %></td>
                 <td><%= data[i].transactions %></td>
 
