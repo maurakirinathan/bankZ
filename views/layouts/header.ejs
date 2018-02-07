@@ -9,10 +9,12 @@
 
 <body>
 <div id="wrapper">
-    <div class="page-header">
+    <div class="page-header" id="header">
         <!--  <h2><%= page_title %></h2>-->
-        <h2>Sampath Bank</h2>
-        <img src="/../images/Sampath-Bank-PLC-logo.png">
+
+        <span style="font-size:30px;cursor:pointer"onclick="openNav()">&#9776;</span>
+        <h2 style="color: white">Sampath Bank</h2>
+        <img src="/../images/bank-logo-light.png">
     </div>
 
     <!--         <div class="topnav">
@@ -21,28 +23,85 @@
                  <a href="/allcheques">ALL CHEQUES</a>
 
              </div>-->
+
+<!--
     <div class="sidebar">
         <div id="sidebar" class="icon-bar">
+            <nav id="nav">
             <a class="active" href="/allblocks" onclick=""><i class="fa fa-home"></i></a>
-            <a class="w" href="/allblocks"><i class="fa fa-navicon"></i></a>
-            <a class="w" href="/pendingTransaction"><i class="fa fa-window-restore"></i></a>
-            <a class="w" href="/allcheques"><i class="fa fa-money"></i></a>
-            <a class="w" href="/alltrasdisplay"><i class="fa fa-upload"></i></a>
-
+            <a id="abcd"  href="/allblocks"><i class="fa fa-navicon"></i></a>
+            <a  href="/pendingTransaction"><i class="fa fa-window-restore"></i></a>
+            <a  href="/allcheques"><i class="fa fa-money"></i></a>
+            <a  href="/alltrasdisplay"><i class="fa fa-upload"></i></a>
+            </nav>
         </div>
+    </div>
+-->
+
+
+<!--    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a  class="active" href="/allblocks" id="a1" onclick="onclicka1()"><i class="fa fa-home"></i>All Blocks</a>
+        <a  href="/pendingTransaction" id="a2" onclick="onclicka2()"><i class="fa fa-window-restore">Processing Transaction</i></a>
+        <a  href="/allcheques" id="a3"><i class="fa fa-money"></i>All Cheques</a>
+        <a  href="/alltrasdisplay" id="a4"><i class="fa fa-upload"></i>All Transaction</a>
+
+
+    </div>-->
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a  class="active" href="/allblocks" id="a1" onclick="onclicka1()"><i class="fa fa-home"></i></a>
+        <a  href="/pendingTransaction" id="a2" onclick="onclicka2()"><i class="fa fa-window-restore"></i></a>
+        <a  href="/allcheques" id="a3"><i class="fa fa-money"></i></a>
+        <a  href="/alltrasdisplay" id="a4"><i class="fa fa-upload"></i></a>
+
+
     </div>
 
     <script>
-        // Add active class to the current button (highlight it)
-        var header = document.getElementById("sidebar");
-        var btns = header.getElementsByClassName("w");
-        for (var i = 0; i < btns.length; i++) {
-            btns[i].addEventListener("click", function () {
-                var current = document.getElementsByClassName("active");
-                current[0].className = current[0].className.replace(" active", "w");
-                this.className = "active";
-            });
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "80px";
+            document.getElementById("header").style.marginLeft = "80px";
+            document.getElementById("datatable").style.marginLeft = "80px";
         }
+
+        /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("header").style.marginLeft = "0";
+            document.getElementById("datatable").style.marginLeft = "0";
+        }
+
+        function onclicka1() {
+            var a1 = document.getElementById('a1');
+            var a2 = document.getElementById('a2');
+            var a3 = document.getElementById('a3');
+            var a4 = document.getElementById('a4');
+
+            a1.className += " active";
+            a2.classList.remove("active");
+            a3.classList.remove("active");
+            a4.classList.remove("active");
+
+        }
+        function onclicka2() {
+            var a1 = document.getElementById('a1');
+            var a2 = document.getElementById('a2');
+            var a3 = document.getElementById('a3');
+            var a4 = document.getElementById('a4');
+
+            a2.className += " active";
+            a1.classList.remove("active");
+            a3.classList.remove("active");
+            a4.classList.remove("active");
+
+        }
+
+        /*var d = document.getElementById("div1");
+        d.className += " otherclass";*/
+
+
     </script>
 
     <div class="content-wrap">
