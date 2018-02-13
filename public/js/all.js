@@ -12,3 +12,23 @@ function allblocks(){
     window.location.href = '/allblocks';
 }
 
+function openNav() {
+    document.getElementById("mySidenav").style.width = "300px";
+    document.getElementById("header").style.marginLeft = "300px";
+    document.getElementById("datatable").style.marginLeft = "300px";
+   document.getElementById("logo").style.paddingRight= "300px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("header").style.marginLeft = "0";
+    document.getElementById("datatable").style.marginLeft = "0";
+    document.getElementById("logo").style.paddingRight= "0";
+}
+
+jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        window.location = $(this).data("href");
+    });
+});

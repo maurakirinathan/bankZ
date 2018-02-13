@@ -4,6 +4,7 @@
     <title>BANK Z</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="/../css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="/../js/all.js"></script>
 </head>
 
@@ -14,7 +15,7 @@
 
         <span style="font-size:30px;cursor:pointer"onclick="openNav()">&#9776;</span>
         <h2 style="color: white">Sampath Bank</h2>
-        <img src="/../images/bank-logo-light.png">
+        <img id="logo" src="/../images/bank-logo-light.png">
     </div>
 
     <!--         <div class="topnav">
@@ -49,57 +50,40 @@
 
     </div>-->
 
+<!--
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a  class="active" href="/allblocks" id="a1" onclick="onclicka1()"><i class="fa fa-home"></i></a>
-        <a  href="/pendingTransaction" id="a2" onclick="onclicka2()"><i class="fa fa-window-restore"></i></a>
-        <a  href="/allcheques" id="a3"><i class="fa fa-money"></i></a>
-        <a  href="/alltrasdisplay" id="a4"><i class="fa fa-upload"></i></a>
+        <a  class="navBar active" href="/allblocks" id="a1" onclick="onclicka1()"><i class="fa fa-home"></i></a>
+        <a  class="navBar" href="/pendingTransaction" id="a2" onclick="onclicka2()"><i class="fa fa-window-restore"></i></a>
+        <a  class="navBar" href="/allcheques" id="a3"><i class="fa fa-money"></i></a>
+        <a  class="navBar" href="/alltrasdisplay" id="a4"><i class="fa fa-upload"></i></a>
 
 
     </div>
+-->
 
     <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "80px";
-            document.getElementById("header").style.marginLeft = "80px";
-            document.getElementById("datatable").style.marginLeft = "80px";
-        }
 
-        /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("header").style.marginLeft = "0";
-            document.getElementById("datatable").style.marginLeft = "0";
-        }
 
-        function onclicka1() {
+        /*function onclicka1() {
             var a1 = document.getElementById('a1');
             var a2 = document.getElementById('a2');
             var a3 = document.getElementById('a3');
             var a4 = document.getElementById('a4');
-
-            a1.className += " active";
-            a2.classList.remove("active");
-            a3.classList.remove("active");
-            a4.classList.remove("active");
-
-        }
-        function onclicka2() {
-            var a1 = document.getElementById('a1');
-            var a2 = document.getElementById('a2');
-            var a3 = document.getElementById('a3');
-            var a4 = document.getElementById('a4');
-
-            a2.className += " active";
-            a1.classList.remove("active");
-            a3.classList.remove("active");
-            a4.classList.remove("active");
-
-        }
+        }*/
 
         /*var d = document.getElementById("div1");
         d.className += " otherclass";*/
+
+   /*     var header = document.getElementById("mySidenav");
+        var btns = header.getElementsByClassName("navBar");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }*/
 
 
     </script>

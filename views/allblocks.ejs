@@ -1,4 +1,15 @@
 <%- include layouts/header.ejs %>
+<div id="mySidenav" class="sidenav">
+    <img  src="../images/bank-logo-light.png">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a  class="navBar active" href="/allblocks" ><i class="fa fa-home"></i>   All Blocks</a>
+    <a  class="navBar" href="/pendingTransaction" ><i class="fa fa-window-restore"></i> Processing Transaction</a>
+    <a  class="navBar" href="/allcheques" ><i class="fa fa-money"></i> All Cheques</a>
+    <a  class="navBar" href="/alltrasdisplay" ><i class="fa fa-upload"></i> All Transaction</a>
+</div>
+
+
+
 
 <div class="page-data" id="datatable">
 
@@ -11,28 +22,30 @@
     </div>
 
     <div class="data-table">
-        <table border="1" cellpadding="7" cellspacing="7">
+        <table border="1" cellpadding="7" cellspacing="7"  id="example">
             <lable ><b> Block List</b></lable>
             <tr >
                 <th>Block ID</th>
                 <th>Created@</th>
                 <th>Transaction Count</th>
-                <th></th>
             </tr>
 
             <% if(data.length){
 
             for(var i = 0;i < data.length;i++) { %>
 
-            <tr>
-                <td><%= data[i].hash %> </td>
+            <tr  class='clickable-row' data-href='/allblocks/<%= data[i].id %>'>
+               <td><%= data[i].hash %> </td>
                 <td><%= data[i].timestamp %></td>
                 <td><%= data[i].transactions %></td>
 
-                <td>
+
+            <!--    <td>
                     <a class="a-inside edit" href="/allblocks/<%= data[i].id %>">View</a>
-                </td>
+                </td>-->
             </tr>
+
+
             <% }
 
             }else{ %>
@@ -42,8 +55,14 @@
             <% } %>
 
         </table>
+        <div align="right" style="padding-top: 2%;">
+            <% if(data.length){%>
+            <a class="a-inside edit" href="/allblocks_previous/<%=data[0].id%>">Previous</a><a class="a-inside edit" href='/allblocks_next/<%=data[data.length-1].id%>'>Next</a>
+                     <%}%>
+        </div>
     </div>
 </div>
+
 
 
 <%- include layouts/footer.ejs %>

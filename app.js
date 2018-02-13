@@ -30,7 +30,7 @@ var cassandra = require('cassandra-driver');
 const client = new cassandra.Client({contactPoints: ['localhost:9042'], keyspace: 'ks1' });
 
 // all environments
-app.set('port', process.env.PORT || 8083);
+app.set('port', process.env.PORT || 8081);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.logger('dev'));
@@ -46,24 +46,37 @@ app.get('/', allblocks.list);
 app.get('/allblocks',allblocks.list);
 app.get('/allblocks/:id',allblocks.list_one);
 app.post('/allblocks_search',allblocks.list_search);
-app.get('/pendingTransaction',pendingTransaction.list);
+app.get('/allblocks_previous/:id',allblocks.list_paging_previous);
+app.get('/allblocks_next/:id',allblocks.list_paging_next);
+
+
+
 app.get('/allcheques',allcheques.list);
-app.get('/allcheques_previous/:bank_id',allcheques.list_paging_previous);
-app.get('/allcheques_next/:bank_id',allcheques.list_paging_next);
+app.get('/allcheques_previous/:id',allcheques.list_paging_previous);
+app.get('/allcheques_next/:id',allcheques.list_paging_next);
 app.get('/chequeview/:id',allcheques.list_one);
 app.post('/allCheque_search',allcheques.list_search);
 
-app.get('/alltrans',alltrans.list_trans);
-app.get('/alltrasdisplay',alltrans.list_trans_display);
 
-app.post('/transection_search',alltrans.list_search);
+app.get('/pendingTransaction',pendingTransaction.list);
 app.get('/pendingTransaction/:id',pendingTransaction.list_one);
 app.post('/pendingTransaction_search',pendingTransaction.list_search);
+app.get('/pendingTransaction_previous/:id',pendingTransaction.list_paging_previous);
+app.get('/pendingTransaction_next/:id',pendingTransaction.list_paging_next);
+
+
+app.get('/alltrans',alltrans.list_trans);
+app.get('/alltrasdisplay',alltrans.list_trans_display);
+app.post('/transection_search',alltrans.list_search);
+app.get('/transview/:id',alltrans.list_one);
+app.get('/allTransaction_previous/:id',alltrans.list_paging_previous);
+app.get('/allTransaction_next/:id',alltrans.list_paging_next);
+
 
 
 
 app.get('/cassandrainfo', cassandrainfo.init_cassandra);
-app.get('/transview/:id',alltrans.list_one);
+
 //app.get('/', routes.index);
 
 

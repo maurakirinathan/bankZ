@@ -1,4 +1,11 @@
 <%- include layouts/header.ejs %>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a  class="navBar active" href="/allblocks" ><i class="fa fa-home"></i>   All Blocks</a>
+    <a  class="navBar" href="/pendingTransaction" ><i class="fa fa-window-restore"></i> Processing Transaction</a>
+    <a  class="navBar " href="/allcheques" ><i class="fa fa-money"></i> All Cheques</a>
+    <a  class="navBar" href="/alltrasdisplay" ><i class="fa fa-upload"></i> All Transaction</a>
+</div>
 
 <div class="page-data" id="datatable">
 

@@ -1,9 +1,11 @@
+
 var cassandra = require('cassandra-driver');
 
-var client = new cassandra.Client({contactPoints: ['127.0.0.1:9042'], keyspace: 'cchain'});
+var client = new cassandra.Client({contactPoints: ['localhost:9042'], keyspace: 'cchain'});
 client.connect(function (err, result) {
     console.log('cchain: cassandra connected');
 });
+
 
 
 /*
@@ -12,7 +14,7 @@ client.connect(function (err, result) {
 exports.list_trans = function (req, res) {
 
     console.log('alltrans: list');
-    client.execute('SELECT * FROM trans', [], function (err, result) {
+    client.execute('SELECT * FROM transactions', [], function (err, result) {
         if (err) {
             console.log('alltrans: list err:', err);
             res.status(404).send({msg: err});
@@ -33,13 +35,13 @@ exports.list_one = function (req, res) {
     var id = req.params.id;
     console.log('trans: viewing one');
 
-    client.execute("SELECT * from trans WHERE id = " + id + " ALLOW FILTERING", [], function (err, result) {
+    client.execute("SELECT * from transactions WHERE id = " + id + " ALLOW FILTERING", [], function (err, result) {
         if (err) {
             console.log('trans: viewing one err:', err);
             res.status(404).send({msg: err});
         } else {
             console.log('trans: viewing one succ:');
-            res.render('transViewOne', {page_title: "Trans Details", data: result.rows});
+            res.render('transactionViewOne', {page_title: "Trans Details", data: result.rows});
         }
     });
 
@@ -51,7 +53,7 @@ exports.list_one = function (req, res) {
 exports.list_trans_display = function (req, res) {
 
     console.log('alltrans: list');
-    client.execute('SELECT * FROM trans', [], function (err, result) {
+    client.execute('SELECT * FROM transactions', [], function (err, result) {
         if (err) {
             console.log('alltrans: list err:', err);
             res.status(404).send({msg: err});
@@ -93,5 +95,48 @@ exports.list_search = function (req, res) {
         res.render('alltransdisplay', {page_title: "Transaction Details", data:result});
 
     }
+};
+
+
+/*
+ * GET cheques listing pagging next.
+ */
+exports.list_paging_next = function (req, res) {
+
+    console.log('alltrans: list');
+    var id = req.params.id;
+
+    console.log('id:  ' +id );
+    client.execute("SELECT * FROM transactions WHERE id > "+ id + "LIMIT 10 ALLOW FILTERING", [], function (err, result) {
+        if (err) {""
+            console.log('alltrans: list err:', err);
+            res.status(404).send({msg: err});
+        } else {
+            console.log('alltrans: list succ:', result.rows);
+            res.render('alltransdisplay', {page_title: "BANK Z", data: result.rows})
+
+        }
+    });
+
+};
+
+/*
+ * GET cheques listing pagging previous.
+ */
+exports.list_paging_previous = function (req, res) {
+
+    console.log('alltrans: list');
+    var id = req.params.id;
+    console.log('id:', id);
+    client.execute("SELECT * FROM transactions WHERE id <"+ id + " LIMIT 10 ALLOW FILTERING", [], function (err, result) {
+        if (err) {""
+            console.log('alltrans: list err:', err);
+            res.status(404).send({msg: err});
+        } else {
+            console.log('alltrans: list succ:', result.rows);
+            res.render('alltransdisplay', {page_title: "BANK Z", data: result.rows})
+        }
+    });
+
 };
 

@@ -1,5 +1,12 @@
 -<%- include layouts/header.ejs %>
 
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a  class="navBar " href="/allblocks" ><i class="fa fa-home"></i>   All Blocks</a>
+    <a  class="navBar" href="/pendingTransaction" ><i class="fa fa-window-restore"></i> Processing Transaction</a>
+    <a  class="navBar active" href="/allcheques" ><i class="fa fa-money"></i> All Cheques</a>
+    <a  class="navBar" href="/alltrasdisplay" ><i class="fa fa-upload"></i> All Transaction</a>
+</div>
 <div class="page-data" id="datatable">
 
 
@@ -17,13 +24,14 @@
                 <td class="label" valign="top">Date</td><td>:<%=data[0].date%></td>
             </tr>
          </table>
+    <div style="padding-top: 400px;">
+    <%- include alltrans.ejs %>
+    </div>
+</div>
+<div>
+    <img class="rotate" src="data:image/png;base64,<%=data[0].img%>" alt="Cheque Image" >
+
 </div>
 
-<div align="center">
-    <img src="data:image/png;base64,<%=data[0].img%>" alt="Cheque Image" class="rotate90"  >
-
-</div>
-
-<%- include alltrans.ejs %>
 
 <%- include layouts/footer.ejs %>

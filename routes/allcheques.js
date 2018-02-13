@@ -1,9 +1,11 @@
+
 var cassandra = require('cassandra-driver');
 
-var client = new cassandra.Client({contactPoints: ['127.0.0.1:9042'], keyspace: 'cchain'});
+var client = new cassandra.Client({contactPoints: ['localhost:9042'], keyspace: 'cchain'});
 client.connect(function (err, result) {
     console.log('cchain: cassandra connected');
 });
+
 
 /*
  * GET cheques listing pagging next.
@@ -11,16 +13,17 @@ client.connect(function (err, result) {
 exports.list_paging_next = function (req, res) {
 
     console.log('allcheques: list');
-    var bank_id = req.params.bank_id;
-     console.log('bank_id:', bank_id);
-    client.execute('SELECT * FROM cheques where token(bank_id) > token('+bank_id+') LIMIT 10', [], function (err, result) {
+    var id = req.params.id;
+
+    console.log('id:  ' +id );
+    client.execute("SELECT * FROM cheques WHERE id > "+ id + "LIMIT 10 ALLOW FILTERING", [], function (err, result) {
         if (err) {""
             console.log('allcheques: list err:', err);
             res.status(404).send({msg: err});
         } else {
             console.log('allcheques1: list succ:', result.rows);
             res.render('allcheques', {page_title: "BANK Z", data: result.rows})
-//console.log("object  "+ result.rows);
+
         }
     });
 
@@ -31,10 +34,10 @@ exports.list_paging_next = function (req, res) {
  */
 exports.list_paging_previous = function (req, res) {
 
-    console.log('allcheques: list');
-    var bank_id = req.params.bank_id;
-      console.log('bank_id:', bank_id);
-    client.execute('SELECT * FROM cheques where token(bank_id) < token('+bank_id+') LIMIT 10', [], function (err, result) {
+   console.log('allcheques: list');
+    var id = req.params.id;
+      console.log('id:', id);
+    client.execute("SELECT * FROM cheques WHERE id <"+ id + " LIMIT 10 ALLOW FILTERING", [], function (err, result) {
         if (err) {""
             console.log('allcheques: list err:', err);
             res.status(404).send({msg: err});
@@ -45,6 +48,7 @@ exports.list_paging_previous = function (req, res) {
     });
 
 };
+
 
 
 /*

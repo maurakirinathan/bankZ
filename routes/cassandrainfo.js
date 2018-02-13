@@ -1,6 +1,8 @@
+
 var cassandra = require('cassandra-driver');
 
-var client = new cassandra.Client({contactPoints: ['127.0.0.1:9042'], keyspace: 'ks1'});
+var client = new cassandra.Client({contactPoints: ['localhost:9042'], keyspace: 'ks1'});
+
 
 /*
  * GET home page.
