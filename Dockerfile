@@ -1,5 +1,11 @@
 FROM node:carbon
 
+
+ENV CASSANDRA_HOST=localhost
+ENV CASSANDRA_PORT=9042
+ENV CASSANDRA_KEYSPACE=cchain
+
+
 # Create app directory
 WORKDIR /usr/src/app
 
@@ -11,10 +17,6 @@ COPY package*.json ./
 RUN npm install
 RUN npm install cassandra-driver
 RUN npm install env-docker --save-dev
-
-ENV CASSANDRA_HOST localhost
-ENV CASSANDRA_PORT  9042
-ENV CASSANDRA_KEYSPACE cchain
 
 # If you are building your code for production
 # RUN npm install --only=production
