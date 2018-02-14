@@ -21,7 +21,7 @@ var pendingTransaction = require('./routes/pendingTransaction');
 var allcheques = require('./routes/allcheques');
 
 //load all trans
-var alltrans = require('./routes/allTrans');
+var allTransactions = require('./routes/allTransactions');
 
 var app = express();
 
@@ -65,17 +65,17 @@ app.get('/pendingTransaction_previous/:id',pendingTransaction.list_paging_previo
 app.get('/pendingTransaction_next/:id',pendingTransaction.list_paging_next);
 
 
-app.get('/alltrans',alltrans.list_trans);
-app.get('/alltrasdisplay',alltrans.list_trans_display);
-app.post('/transection_search',alltrans.list_search);
-app.get('/transview/:id',alltrans.list_one);
-app.get('/allTransaction_previous/:id',alltrans.list_paging_previous);
-app.get('/allTransaction_next/:id',alltrans.list_paging_next);
+app.get('/alltrans',allTransactions.list_trans);
+app.get('/alltrasdisplay',allTransactions.list_trans_display);
+app.post('/transection_search',allTransactions.list_search);
+app.get('/transview/:id',allTransactions.list_one);
+app.get('/allTransaction_previous/:id',allTransactions.list_paging_previous);
+app.get('/allTransaction_next/:id',allTransactions.list_paging_next);
 
 
 
 
-app.get('/cassandrainfo', cassandrainfo.init_cassandra);
+//app.get('/cassandrainfo', cassandrainfo.init_cassandra);
 
 //app.get('/', routes.index);
 

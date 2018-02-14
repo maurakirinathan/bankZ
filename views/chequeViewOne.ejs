@@ -1,15 +1,18 @@
--<%- include layouts/header.ejs %>
+<%- include layouts/header.ejs %>
 
 <div id="mySidenav" class="sidenav">
+    <img  src="../images/bank-logo-light.png" style="padding-left:14%;">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a  class="navBar " href="/allblocks" ><i class="fa fa-home"></i>   All Blocks</a>
     <a  class="navBar" href="/pendingTransaction" ><i class="fa fa-window-restore"></i> Processing Transaction</a>
     <a  class="navBar active" href="/allcheques" ><i class="fa fa-money"></i> All Cheques</a>
     <a  class="navBar" href="/alltrasdisplay" ><i class="fa fa-upload"></i> All Transaction</a>
 </div>
+
+
 <div class="page-data" id="datatable">
 
-
+<div id="wrapper2">
         <table cellpadding="11">
             <tr>
                 <td class="label">Cheque ID</td><td>: <%=data[0].id%></td>
@@ -24,7 +27,9 @@
                 <td class="label" valign="top">Date</td><td>:<%=data[0].date%></td>
             </tr>
          </table>
-    <div style="padding-top: 400px;">
+
+</div>
+    <div >
     <%- include alltrans.ejs %>
     </div>
 </div>

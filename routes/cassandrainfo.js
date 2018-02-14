@@ -24,6 +24,7 @@ client.connect(function (err, result) {
  * GET home page.
  */
 
+/*
 exports.init_cassandra = function(req, res){
 
 	client.connect()
@@ -71,4 +72,4 @@ exports.init_cassandra = function(req, res){
 			return client.shutdown();
 		});
 
-};
+};*/

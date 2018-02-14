@@ -1,6 +1,6 @@
 body {
   margin:0;
-  font: 14px "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font: 18px "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
   background:#eee;
   width:100%;
   height:100%;
@@ -43,19 +43,20 @@ a {
     padding: 10px;
     #width: 60%;
     float: left;
+    color: white;
 }
 
 .page-header img {
     float: right;
     width: 150px;
-    padding-top: 12px;
+    padding-top: 24px;
     padding-right: 10px;
 }
 
 .page-header span {
     float: left;
     width: 50px;
-    padding: 21px;
+    padding: 29px;
     color: white;
 
 }
@@ -228,7 +229,7 @@ body {margin:0}
 }
 
 .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding: 37px 28px 27px 57px;
     text-decoration: none;
     font-size: 20px;
     color: #818181;
@@ -242,8 +243,8 @@ body {margin:0}
 
 .sidenav .closebtn {
     position: absolute;
-    top: 0;
-    right: 25px;
+    top: -26px;
+    right: 0px;
     font-size: 36px;
     margin-left: 50px;
 }
@@ -265,10 +266,29 @@ body {margin:0}
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
-    transform-origin: 273% 46%;
+    transform-origin: 285% 59%;
 }
 
 .tablepos
 {
     transform-origin: 120% 51%;
 }
+
+#wrapper2{
+
+    width:99%;
+    height:380px;
+    border:10px solid #ddd;
+    background:#fff;
+    z-index:-1;
+}
+
+#wrapper3{
+
+    width:99%;
+    height:520px;
+    border:10px solid #ddd;
+    background:#fff;
+    z-index:-1;
+}
+

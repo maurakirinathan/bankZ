@@ -2,12 +2,11 @@
 var cassandra = require('cassandra-driver');
 var PropertiesReader = require('properties-reader');
 
-/*
-var properties = PropertiesReader('PropertiesReader.js');
+/*var properties = PropertiesReader('PropertiesReader.js');
 var host =  properties.get('db.host');
 var port = properties.get('db.port');
-var keyspace = properties.get('db.keyspace');
-*/
+var keyspace = properties.get('db.keyspace');*/
+
 var host =  process.env.CASSANDRA_HOST;
 var port = process.env.CASSANDRA_PORT;
 var keyspace = process.env.CASSANDRA_KEYSPACE;
@@ -37,7 +36,7 @@ exports.list_paging_next = function (req, res) {
             res.status(404).send({msg: err});
         } else {
             console.log('allcheques1: list succ:', result.rows);
-            res.render('allcheques', {page_title: "BANK Z", data: result.rows})
+            res.render('allcheques', {page_title: "All Cheques", data: result.rows})
 
         }
     });
@@ -58,13 +57,13 @@ exports.list_paging_previous = function (req, res) {
             res.status(404).send({msg: err});
         } else {
             console.log('allcheques2: list succ:', result.rows);
-            res.render('allcheques', {page_title: "BANK Z", data: result.rows})
+            res.render('allcheques', {page_title: "All Cheques", data: result.rows})
         }
     });
 
 };
 
-
+//SELECT * FROM cheques WHERE expr(cheque_lucene_index, '{ sort: [ {type: "simple", field: "id", reverse: true} ] }') AND bank='sampath' AND id < 7a22c8be-0407-11e8-ba89-0ed5f89f718b LIMIT 2 ;
 
 /*
  * GET cheques listing .
@@ -78,7 +77,7 @@ exports.list = function (req, res) {
             res.status(404).send({msg: err});
         } else {
             console.log('allcheques: list succ:', result.rows);
-            res.render('allcheques', {page_title: "BANK Z", data: result.rows})
+            res.render('allcheques', {page_title: "All Cheques", data: result.rows})
         }
     });
 };
@@ -126,14 +125,14 @@ exports.list_search = function (req, res) {
                 //  allblocks();
             } else {
                 console.log('block: search one succ:');
-                res.render('allcheques', {page_title: "Cheques Details", data: result.rows});
+                res.render('allcheques', {page_title: "Cheque Details", data: result.rows});
             }
         });
     }
     else
     {
         var result=[];
-        res.render('allcheques', {page_title: "Cheques Details", data:result});
+        res.render('allcheques', {page_title: "Cheque Details", data:result});
     }
 };
 

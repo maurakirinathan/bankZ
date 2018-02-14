@@ -36,7 +36,7 @@ exports.list_trans = function (req, res) {
             res.status(404).send({msg: err});
         } else {
             console.log('alltrans: list succ:', result.rows);
-            res.render('alltrans', {page_title: "BANK Z", data: result.rows})
+            res.render('alltrans', {page_title: "All Transactions", data: result.rows})
         }
     });
 
@@ -57,7 +57,7 @@ exports.list_one = function (req, res) {
             res.status(404).send({msg: err});
         } else {
             console.log('trans: viewing one succ:');
-            res.render('transactionViewOne', {page_title: "Trans Details", data: result.rows});
+            res.render('transactionViewOne', {page_title: "Transactions Details", data: result.rows});
         }
     });
 
@@ -75,7 +75,7 @@ exports.list_trans_display = function (req, res) {
             res.status(404).send({msg: err});
         } else {
             console.log('alltrans: list succ:', result.rows);
-            res.render('alltransdisplay', {page_title: "BANK Z", data: result.rows})
+            res.render('alltransdisplay', {page_title: "All Transactions", data: result.rows})
         }
     });
 
@@ -129,7 +129,7 @@ exports.list_paging_next = function (req, res) {
             res.status(404).send({msg: err});
         } else {
             console.log('alltrans: list succ:', result.rows);
-            res.render('alltransdisplay', {page_title: "BANK Z", data: result.rows})
+            res.render('alltransdisplay', {page_title: "All Transactions", data: result.rows})
 
         }
     });
@@ -150,7 +150,7 @@ exports.list_paging_previous = function (req, res) {
             res.status(404).send({msg: err});
         } else {
             console.log('alltrans: list succ:', result.rows);
-            res.render('alltransdisplay', {page_title: "BANK Z", data: result.rows})
+            res.render('alltransdisplay', {page_title: "All Transactions", data: result.rows})
         }
     });
 

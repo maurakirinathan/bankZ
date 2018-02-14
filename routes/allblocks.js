@@ -1,10 +1,12 @@
 var cassandra = require('cassandra-driver');
 var PropertiesReader = require('properties-reader');
 
-/*var properties = PropertiesReader('PropertiesReader.js');
+/*
+var properties = PropertiesReader('PropertiesReader.js');
 var host =  properties.get('db.host');
 var port = properties.get('db.port');
-var keyspace = properties.get('db.keyspace');*/
+var keyspace = properties.get('db.keyspace');
+*/
 
 
 var host =  process.env.CASSANDRA_HOST;
@@ -37,7 +39,7 @@ exports.list = function (req, res) {
             res.status(404).send({msg: err});
         } else {
             console.log('allblocks: list succ:', result.rows);
-            res.render('allblocks', {page_title: "BANK Z", data: result.rows})
+            res.render('allblocks', {page_title: "All Blocks", data: result.rows})
         }
     });
 
@@ -114,7 +116,7 @@ exports.list_paging_next = function (req, res) {
             res.status(404).send({msg: err});
         } else {
             console.log('allblocks: list succ:', result.rows);
-            res.render('allblocks', {page_title: "BANK Z", data: result.rows})
+            res.render('allblocks', {page_title: "All Blocks", data: result.rows})
 
         }
     });
@@ -135,7 +137,7 @@ exports.list_paging_previous = function (req, res) {
             res.status(404).send({msg: err});
         } else {
             console.log('allblocks: list succ:', result.rows);
-            res.render('allblocks', {page_title: "BANK Z", data: result.rows})
+            res.render('allblocks', {page_title: "All Blocks", data: result.rows})
         }
     });
 

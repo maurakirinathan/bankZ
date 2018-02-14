@@ -34,7 +34,7 @@ exports.list = function (req, res) {
             res.status(404).send({msg: err});
         } else {
             console.log('pending transaction: list succ:', result.rows);
-            res.render('pendingTransaction', {page_title: "BANK Z", data: result.rows})
+            res.render('pendingTransaction', {page_title: "Processing Transactions", data: result.rows})
         }
     });
 
@@ -54,7 +54,7 @@ exports.list_one = function (req, res) {
             res.status(404).send({msg: err});
         } else {
             console.log('transactions: viewing one succ:');
-            res.render('transViewOne', {page_title: "Transaction Details", data: result.rows});
+            res.render('transViewOne', {page_title: "Processing Transactions Details", data: result.rows});
         }
     });
 
@@ -80,7 +80,7 @@ exports.list_search = function (req, res) {
                 //  allblocks();
             } else {
                 console.log('pending trans: search one succ:');
-                res.render('pendingTransaction', {page_title: "trans Details", data: result.rows});
+                res.render('pendingTransaction', {page_title: "Processing Transactions Details", data: result.rows});
             }
         });
     }
@@ -107,7 +107,7 @@ exports.list_paging_next = function (req, res) {
             res.status(404).send({msg: err});
         } else {
             console.log('pendingTransaction: list succ:', result.rows);
-            res.render('pendingTransaction', {page_title: "BANK Z", data: result.rows})
+            res.render('pendingTransaction', {page_title: "Processing Transactions", data: result.rows})
 
         }
     });
@@ -128,7 +128,7 @@ exports.list_paging_previous = function (req, res) {
             res.status(404).send({msg: err});
         } else {
             console.log('pendingTransaction: list succ:', result.rows);
-            res.render('pendingTransaction', {page_title: "BANK Z", data: result.rows})
+            res.render('pendingTransaction', {page_title: "Processing Transactions", data: result.rows})
         }
     });
 
