@@ -10,6 +10,10 @@
     "express": "3.5.1",
     "express-myconnection": "1.0.4",
     "jade": "*",
-    "cassandra-driver":"*"
+    "cassandra-driver": "*",
+    "properties-reader": "*"
+  },
+  "devDependencies": {
+    "env-docker": "^1.0.1"
   }
 }
