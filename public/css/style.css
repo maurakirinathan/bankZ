@@ -37,7 +37,7 @@ a {
     padding:2px;
     padding-left:40px;
     width: 97.5%;
-    background:#34495e;
+    background:#09345f;
 }
 
 .page-header h2 {
@@ -87,7 +87,11 @@ a {
 }
 .data-table tr {
     border: 0.5px ridge;
+
 }
+
+data-table tr:nth-of-type(odd) { background-color: #ff504a; }
+data-table tr:nth-of-type(even) { background-color: #f0f9ff; }
 
 
 .a-inside{padding:4px 10px;border:1px solid #fff;text-decoration:none;}
@@ -229,7 +233,7 @@ body {margin:0}
     z-index: 1;
     top: 0;
     left: 0;
-    background-color:#34495e;
+    background-color:#09345f;
     overflow-x: hidden;
     transition: 0.5s;
     /*padding-top: 60px;*/

@@ -2,23 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c25b83a7-9eaa-4b84-9e4c-e6b4c8292705" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/home.png" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/home1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/process.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/all.js" afterPath="$PROJECT_DIR$/public/js/all.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/allTransactions.js" afterPath="$PROJECT_DIR$/routes/allTransactions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/allblocks.js" afterPath="$PROJECT_DIR$/routes/allblocks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/allcheques.js" afterPath="$PROJECT_DIR$/routes/allcheques.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/pendingTransaction.js" afterPath="$PROJECT_DIR$/routes/pendingTransaction.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/allblocks.ejs" afterPath="$PROJECT_DIR$/views/allblocks.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/allcheques.ejs" afterPath="$PROJECT_DIR$/views/allcheques.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/alltransdisplay.ejs" afterPath="$PROJECT_DIR$/views/alltransdisplay.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/blockViewOne.ejs" afterPath="$PROJECT_DIR$/views/blockViewOne.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/chequeViewOne.ejs" afterPath="$PROJECT_DIR$/views/chequeViewOne.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pendingTransaction.ejs" afterPath="$PROJECT_DIR$/views/pendingTransaction.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/transViewOne.ejs" afterPath="$PROJECT_DIR$/views/transViewOne.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/transactionViewOne.ejs" afterPath="$PROJECT_DIR$/views/transactionViewOne.ejs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,8 +22,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="301" column="10" lean-forward="true" selection-start-line="301" selection-start-column="10" selection-end-line="301" selection-end-column="10" />
+            <state relative-caret-position="2061">
+              <caret line="307" column="11" lean-forward="true" selection-start-line="307" selection-start-column="11" selection-end-line="307" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -42,8 +32,8 @@
       <file leaf-file-name="allblocks.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/allblocks.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="11" lean-forward="false" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="18" />
+            <state relative-caret-position="-711">
+              <caret line="0" column="33" lean-forward="true" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -64,8 +54,8 @@
       <file leaf-file-name="all.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/all.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+            <state relative-caret-position="243">
+              <caret line="21" column="67" lean-forward="false" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -91,10 +81,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="transactionViewOne.ejs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="transactionViewOne.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/transactionViewOne.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
+            <state relative-caret-position="612">
               <caret line="43" column="12" lean-forward="true" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
               <folding />
             </state>
@@ -113,10 +103,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blockViewOne.ejs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="blockViewOne.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/blockViewOne.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="622">
+            <state relative-caret-position="468">
               <caret line="41" column="10" lean-forward="false" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
               <folding />
             </state>
@@ -148,7 +138,6 @@
       <find>.btn</find>
       <find>topnav</find>
       <find>4CAF50</find>
-      <find>data-ta</find>
       <find>active</find>
       <find>main</find>
       <find>page-container</find>
@@ -166,6 +155,8 @@
       <find>side</find>
       <find>tr</find>
       <find>wrapper</find>
+      <find>data-ta</find>
+      <find>300px</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -201,13 +192,13 @@
         <option value="$PROJECT_DIR$/views/allcheques.ejs" />
         <option value="$PROJECT_DIR$/views/alltransdisplay.ejs" />
         <option value="$PROJECT_DIR$/views/pendingTransaction.ejs" />
-        <option value="$PROJECT_DIR$/views/blockViewOne.ejs" />
-        <option value="$PROJECT_DIR$/views/allblocks.ejs" />
-        <option value="$PROJECT_DIR$/public/js/all.js" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/views/chequeViewOne.ejs" />
         <option value="$PROJECT_DIR$/views/transViewOne.ejs" />
         <option value="$PROJECT_DIR$/views/transactionViewOne.ejs" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
+        <option value="$PROJECT_DIR$/views/allblocks.ejs" />
+        <option value="$PROJECT_DIR$/public/js/all.js" />
+        <option value="$PROJECT_DIR$/views/blockViewOne.ejs" />
       </list>
     </option>
   </component>
@@ -222,10 +213,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1920" />
-    <option name="y" value="-2" />
-    <option name="width" value="1920" />
-    <option name="height" value="1082" />
+    <option name="x" value="55" />
+    <option name="y" value="270" />
+    <option name="width" value="1865" />
+    <option name="height" value="810" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -444,15 +435,15 @@
       <workItem from="1518615339082" duration="2137000" />
       <workItem from="1518673598877" duration="584000" />
       <workItem from="1519617097513" duration="43000" />
-      <workItem from="1519636961458" duration="3920000" />
+      <workItem from="1519636961458" duration="5427000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105427000" />
+    <option name="totallyTimeSpent" value="106934000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="-2" width="1920" height="1082" extended-state="6" />
+    <frame x="55" y="25" width="1865" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -464,10 +455,10 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11339093" sideWeight="0.49807587" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23581758" sideWeight="0.49807587" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2145144" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22100055" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Dilbert" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -797,14 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/allblocks.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="11" lean-forward="false" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/layouts/header.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -812,22 +795,6 @@
           <folding>
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/all.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="301" column="10" lean-forward="true" selection-start-line="301" selection-start-column="10" selection-end-line="301" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -865,18 +832,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/blockViewOne.ejs">
+    <entry file="file://$PROJECT_DIR$/views/transactionViewOne.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="41" column="10" lean-forward="false" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+        <state relative-caret-position="612">
+          <caret line="43" column="12" lean-forward="true" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/transactionViewOne.ejs">
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="43" column="12" lean-forward="true" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
+        <state relative-caret-position="2061">
+          <caret line="307" column="11" lean-forward="true" selection-start-line="307" selection-start-column="11" selection-end-line="307" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/all.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="21" column="67" lean-forward="false" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/allblocks.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-711">
+          <caret line="0" column="33" lean-forward="true" selection-start-line="0" selection-start-column="33" selection-end-line="0" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/blockViewOne.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="41" column="10" lean-forward="false" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
           <folding />
         </state>
       </provider>

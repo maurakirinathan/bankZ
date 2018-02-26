@@ -16,10 +16,10 @@ var t1 = true;
 function openNav() {
 
     if (t1) {
-        document.getElementById("mySidenav").style.width = "300px";
-        document.getElementById("header").style.marginLeft = "300px";
-        document.getElementById("datatable").style.marginLeft = "300px";
-        document.getElementById("logo").style.paddingRight = "300px";
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("header").style.marginLeft = "250px";
+        document.getElementById("datatable").style.marginLeft = "250px";
+        document.getElementById("logo").style.paddingRight = "250px";
         t1 = false;
     }
     else
