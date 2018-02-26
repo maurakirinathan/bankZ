@@ -1,8 +1,8 @@
 <%- include layouts/header.ejs %>
 <div id="mySidenav" class="sidenav">
-    <img  src="../images/bank-logo-light.png" style="padding-left:14%;">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a  class="navBar active" href="/allblocks" ><i class="fa fa-home"></i>   All Blocks</a>
+<!--    <img  src="../images/bank-logo-light.png" style="padding-left:14%;">-->
+   <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
+    <a  class="navBar active" href="/allblocks" ><img src="../images/home.png" height="70px" width="70px"/><br>     All Blocks</a>
     <a  class="navBar" href="/pendingTransaction" ><i class="fa fa-window-restore"></i> Processing Transaction</a>
     <a  class="navBar" href="/allcheques" ><i class="fa fa-money"></i> All Cheques</a>
     <a  class="navBar" href="/alltrasdisplay" ><i class="fa fa-upload"></i> All Transaction</a>
@@ -17,7 +17,7 @@
     <div style="float: right;">
         <form method="post" action="/allblocks_search">
         <input type="text" placeholder="Search by Block ID.." name="id" >
-        <button type="submit" ><i class="fa fa-search"></i></button>
+       <button type="submit" class="a-inside edit">Search</button>
         </form>
     </div>
 

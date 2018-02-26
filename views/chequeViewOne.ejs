@@ -12,7 +12,7 @@
 
 <div class="page-data" id="datatable">
 
-<div id="wrapper2">
+<div id="wrapper4">
         <table cellpadding="11">
             <tr>
                 <td class="label">Cheque ID</td><td>: <%=data[0].id%></td>
@@ -29,13 +29,20 @@
          </table>
 
 </div>
+
+    <div id="wrapper3">
+        <img class="rotate" src="data:image/png;base64,<%=data[0].img%>" alt="Cheque Image" >
+
+    </div>
+
+
+
+
+
+
     <div >
     <%- include alltrans.ejs %>
     </div>
-</div>
-<div>
-    <img class="rotate" src="data:image/png;base64,<%=data[0].img%>" alt="Cheque Image" >
-
 </div>
 
 

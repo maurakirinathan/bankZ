@@ -1,6 +1,7 @@
 body {
   margin:0;
-  font: 18px "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font: 16px "'Viga'", sans-serif;
+
   background:#eee;
   width:100%;
   height:100%;
@@ -80,9 +81,15 @@ a {
 
 .data-table td {
     padding-top: 25px;
+    border: none;
    /* padding-bottom: 25px;*/
 
 }
+.data-table tr {
+    border: 0.5px ridge;
+}
+
+
 .a-inside{padding:4px 10px;border:1px solid #fff;text-decoration:none;}
 .a-inside.edit{background-color:#ff9900;color:#fff;}
 .a-inside.delete{background-color:#D23641;color:#fff;}
@@ -225,11 +232,11 @@ body {margin:0}
     background-color:#34495e;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    /*padding-top: 60px;*/
 }
 
 .sidenav a {
-    padding: 37px 28px 27px 57px;
+    padding: 75px 28px 75px 57px;
     text-decoration: none;
     font-size: 20px;
     color: #818181;
@@ -266,7 +273,7 @@ body {margin:0}
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
-    transform-origin: 285% 59%;
+    transform-origin: 155% 71%;
 }
 
 .tablepos
@@ -292,3 +299,11 @@ body {margin:0}
     z-index:-1;
 }
 
+#wrapper4{
+
+    width:99%;
+    height:200px;
+    border:10px solid #ddd;
+    background:#fff;
+    z-index:-1;
+}
