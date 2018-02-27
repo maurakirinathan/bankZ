@@ -90,6 +90,10 @@ a {
 
 }
 
+.data-table tr:hover {
+    background: #d0dfe2 !important;
+}
+
 data-table tr:nth-of-type(odd) { background-color: #ff504a; }
 data-table tr:nth-of-type(even) { background-color: #f0f9ff; }
 
@@ -240,7 +244,7 @@ body {margin:0}
 }
 
 .sidenav a {
-    padding: 75px 28px 75px 57px;
+    padding: 34px 28px 7px 33px;
     text-decoration: none;
     font-size: 20px;
     color: #818181;
@@ -277,7 +281,7 @@ body {margin:0}
     -o-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
-    transform-origin: 155% 71%;
+    transform-origin: 166% 71%;
 }
 
 .tablepos
@@ -289,8 +293,8 @@ body {margin:0}
 
     width:99%;
     height:380px;
-    border:10px solid #ddd;
-    background:#fff;
+    background: #eeeeee;
+    border-radius: 25px;
     z-index:-1;
 }
 
@@ -298,8 +302,9 @@ body {margin:0}
 
     width:99%;
     height:520px;
-    border:10px solid #ddd;
-    background:#fff;
+/*    border:10px groove #ddd;*/
+    background: #eeeeee;
+    border-radius: 25px;
     z-index:-1;
 }
 
@@ -307,7 +312,17 @@ body {margin:0}
 
     width:99%;
     height:200px;
-    border:10px solid #ddd;
-    background:#fff;
+    background: #eeeeee;
+    border-radius: 25px;
+    z-index:-1;
+}
+
+#wrapper5{
+
+    width:99%;
+    height:400px;
+    /*    border:10px groove #ddd;*/
+    background: #eeeeee;
+    border-radius: 25px;
     z-index:-1;
 }

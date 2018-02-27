@@ -32,7 +32,7 @@ client.connect(function (err, result) {
 exports.list_trans = function (req, res) {
 
     console.log('alltrans: list');
-    client.execute('SELECT * FROM transactions', [], function (err, result) {
+    client.execute('SELECT * FROM transactions  LIMIT 10', [], function (err, result) {
         if (err) {
             console.log('alltrans: list err:', err);
             res.status(404).send({msg: err});
@@ -71,7 +71,7 @@ exports.list_one = function (req, res) {
 exports.list_trans_display = function (req, res) {
 
     console.log('alltrans: list');
-    client.execute('SELECT * FROM transactions', [], function (err, result) {
+    client.execute('SELECT * FROM transactions LIMIT 10', [], function (err, result) {
         if (err) {
             console.log('alltrans: list err:', err);
             res.status(404).send({msg: err});

@@ -16,10 +16,11 @@ var t1 = true;
 function openNav() {
 
     if (t1) {
-        document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("header").style.marginLeft = "250px";
-        document.getElementById("datatable").style.marginLeft = "250px";
-        document.getElementById("logo").style.paddingRight = "250px";
+        document.getElementById("mySidenav").style.width = "200px";
+        document.getElementById("header").style.marginLeft = "200px";
+        document.getElementById("header").style.width = "87%";
+        document.getElementById("datatable").style.marginLeft = "200px";
+      //  document.getElementById("logo").style.paddingRight = "200px";
         t1 = false;
     }
     else
@@ -27,7 +28,8 @@ function openNav() {
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("header").style.marginLeft = "0";
         document.getElementById("datatable").style.marginLeft = "0";
-        document.getElementById("logo").style.paddingRight= "0";
+        document.getElementById("logo").style.paddingRight= "5px";
+        document.getElementById("header").style.width = "99%";
         t1 = true;
     }
 }

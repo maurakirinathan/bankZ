@@ -1,12 +1,12 @@
 <%- include layouts/header.ejs %>
-<div id="mySidenav" class="sidenav">
+<!--<div id="mySidenav" class="sidenav">
     <img  src="../images/bank-logo-light.png" style="padding-left:14%;">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a  class="navBar " href="/allblocks" ><i class="fa fa-home"></i>   All Blocks</a>
     <a  class="navBar " href="/pendingTransaction" ><i class="fa fa-window-restore"></i> Processing Transaction</a>
     <a  class="navBar " href="/allcheques" ><i class="fa fa-money"></i> All Cheques</a>
     <a  class="navBar active" href="/alltrasdisplay" ><i class="fa fa-upload"></i> All Transaction</a>
-</div>
+</div>-->
 <div class="page-data" id="datatable">
 
     <div id="wrapper3">
@@ -15,13 +15,13 @@
             <td class="label">Transaction ID</td><td>: <%=data[0].id%></td>
         </tr>
         <tr>
-            <td class="label" valign="top">Bank ID</td><td>:<%=data[0].bank_id%></td>
+            <td class="label" valign="top">Bank ID</td><td>:<%=data[0].bank%></td>
         </tr>
         <tr>
             <td class="label" valign="top">Cheque Amount</td><td>:<%=data[0].cheque_amount%></td>
         </tr>
         <tr>
-            <td class="label" valign="top">Cheque Bank ID</td><td>:<%=data[0].cheque_bank_id%></td>
+            <td class="label" valign="top">Cheque Bank ID</td><td>:<%=data[0].cheque_bank%></td>
         </tr>
         <tr>
             <td class="label" valign="top">Cheque Date</td><td>:<%=data[0].cheque_date%></td>
@@ -36,7 +36,7 @@
             <td class="label" valign="top">From Account</td><td>:<%=data[0].from_acc%></td>
         </tr>
         <tr>
-            <td class="label" valign="top">Status</td><td>:<%=data[0].status%></td>
+            <td class="label" valign="top">Status</td><td>:<%=data[0].state%></td>
         </tr>
         <tr>
             <td class="label" valign="top">Date</td><td>:<%=data[0].timestamp%></td>

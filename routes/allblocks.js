@@ -31,7 +31,7 @@ client.connect(function (err, result) {
 exports.list = function (req, res) {
 
     console.log('allblocks: list');
-    client.execute('SELECT * FROM blocks', [], function (err, result) {
+    client.execute('SELECT * FROM blocks LIMIT 10', [], function (err, result) {
         if (err) {
             console.log('allblocks: list err:', err);
             res.status(404).send({msg: err});

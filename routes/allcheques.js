@@ -51,7 +51,7 @@ exports.list_paging_previous = function (req, res) {
    console.log('allcheques: list');
     var id = req.params.id;
       console.log('id:', id);
-    client.execute("SELECT * FROM cheques WHERE id <"+ id + " LIMIT 10 ALLOW FILTERING", [], function (err, result) {
+    client.execute("SELECT * FROM cheques WHERE expr(cheque_lucene_index," +"\'{ sort: [ {type: \"simple\", field: \"id\", reverse: true} ] }"+"\') AND bank='sampath' AND id <"+ id + " LIMIT 10 ALLOW FILTERING", [], function (err, result) {
         if (err) {""
             console.log('allcheques: list err:', err);
             res.status(404).send({msg: err});
@@ -62,6 +62,7 @@ exports.list_paging_previous = function (req, res) {
     });
 
 };
+//SELECT * FROM cheques WHERE expr(cheque_lucene_index, '{ sort: [ {type: "simple", field: "id", reverse: true} ] }') AND bank='sampath' AND id < 4f3211e0-1b82-11e8-b813-6d2c86545d91 LIMIT 2 ;
 
 //SELECT * FROM cheques WHERE expr(cheque_lucene_index, '{ sort: [ {type: "simple", field: "id", reverse: true} ] }') AND bank='sampath' AND id < 7a22c8be-0407-11e8-ba89-0ed5f89f718b LIMIT 2 ;
 
