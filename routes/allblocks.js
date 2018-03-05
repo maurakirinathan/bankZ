@@ -1,15 +1,15 @@
 var cassandra = require('cassandra-driver');
 var PropertiesReader = require('properties-reader');
 
-/*var properties = PropertiesReader('PropertiesReader.js');
+var properties = PropertiesReader('PropertiesReader.js');
 var host =  properties.get('db.host');
 var port = properties.get('db.port');
-var keyspace = properties.get('db.keyspace');*/
+var keyspace = properties.get('db.keyspace');
 
 
-var host =  process.env.CASSANDRA_HOST;
+/*var host =  process.env.CASSANDRA_HOST;
 var port = process.env.CASSANDRA_PORT;
-var keyspace = process.env.CASSANDRA_KEYSPACE;
+var keyspace = process.env.CASSANDRA_KEYSPACE;*/
 
 
 
@@ -129,7 +129,8 @@ exports.list_paging_previous = function (req, res) {
     console.log('allblocks: list');
     var id = req.params.id;
     console.log('id:', id);
-    client.execute("SELECT * FROM blocks WHERE id <"+ id + " LIMIT 10 ALLOW FILTERING", [], function (err, result) {
+    client.execute("SELECT * FROM blocks WHERE expr(block_lucene_index," +"\'{ sort: [ {type: \"simple\", field: \"id\", reverse: true} ] }"+"\') AND bank='sampath' AND id <"+ id + " LIMIT 10 ALLOW FILTERING", [], function (err, result) {
+
         if (err) {""
             console.log('allblocks: list err:', err);
             res.status(404).send({msg: err});

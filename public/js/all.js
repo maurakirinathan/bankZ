@@ -47,3 +47,34 @@ jQuery(document).ready(function($) {
         window.location = $(this).data("href");
     });
 });
+
+/*
+
+function blocksclick() {
+    alert("123")
+    document.getElementById("4").set= "";
+    document.getElementById("1").style.backgroundColor =  "#FFA500";
+    document.getElementById("2").style.backgroundColor = "";
+    document.getElementById("3").style.backgroundColor = "";
+    document.getElementById("4").style.backgroundColor= "";
+}
+
+function processingclick() {
+    document.getElementById("1").style.backgroundColor =  "";
+    document.getElementById("2").style.backgroundColor = "";
+    document.getElementById("3").style.backgroundColor = "#FFA500 !important";
+    document.getElementById("4").style.backgroundColor= "";
+}
+function chequesclick() {
+    document.getElementById("1").style.backgroundColor =  "";
+    document.getElementById("2").style.backgroundColor = "";
+    document.getElementById("3").style.backgroundColor = "#FFA500 !important";
+    document.getElementById("4").style.backgroundColor= "";
+}
+function transectionsclick() {
+    document.getElementById("1").style.backgroundColor =  "";
+    document.getElementById("2").style.backgroundColor = "";
+    document.getElementById("3").style.backgroundColor = "";
+    document.getElementById("4").style.backgroundColor= "#FFA500 !important";
+}
+*/
