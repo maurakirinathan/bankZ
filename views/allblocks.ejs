@@ -2,10 +2,10 @@
 
 <%- include layouts/header.ejs %>
 
-<div id="mySidenav" class="sidenav">
+<div id="mySidenav" class="sidenav" >
     <!--    <img  src="../images/bank-logo-light.png" style="padding-left:14%;">-->
     <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
-    <a  class=" active" href="/allblocks" ><img src="../images/block.png" height="80px" width="120px"/><br>     All Blocks</a>
+    <a  class=" active" href="/allblocks" ><img src="../images/block.png" height="70px" width="115px"/><br>    All Blocks</a>
     <a  class="navBar" href="/pendingTransaction"  ><img src="../images/process.png" height="80px" width="80px"/><br>Processing Transaction</a>
     <a  class="navBar" href="/allcheques" ><img src="../images/cheque1.png" height="80px" width="80px"/><br> All Cheques</a>
     <a  class="navBar" href="/alltrasdisplay" ><img src="../images/transection.png" height="80px" width="80px"/><br>  All Transaction</a>
@@ -40,7 +40,7 @@
             <tr  class='clickable-row' data-href='/allblocks/<%= data[i].id %>'>
                <td><%= data[i].hash %> </td>
                 <td><%= data[i].timestamp %></td>
-                <td><%= data[i].transactions.size() %></td>
+                <td><%= data[i].transactions.length %></td>
 
 
             <!--    <td>
