@@ -2,34 +2,36 @@
 
 <%- include layouts/header.ejs %>
 
-<div id="mySidenav" class="sidenav" >
-    <!--    <img  src="../images/bank-logo-light.png" style="padding-left:14%;">-->
-    <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
+<!--
+<div id="mySidenav" class="sidenav" style="width: 300px;" >
+        <img  src="../images/bank-logo-light.png" style="padding-left:14%;">
+    &lt;!&ndash; <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>&ndash;&gt;
     <a  class=" active" href="/allblocks" ><img src="../images/block.png" height="70px" width="115px"/><br>    All Blocks</a>
     <a  class="navBar" href="/pendingTransaction"  ><img src="../images/process.png" height="80px" width="80px"/><br>Processing Transaction</a>
     <a  class="navBar" href="/allcheques" ><img src="../images/cheque1.png" height="80px" width="80px"/><br> All Cheques</a>
     <a  class="navBar" href="/alltrasdisplay" ><img src="../images/transection.png" height="80px" width="80px"/><br>  All Transaction</a>
 </div>
+-->
 
 
 
 
-<div class="page-data" id="datatable">
+<div class="page-data" id="datatable" >
 
 
-    <div style="float: right;">
+    <div style="padding-left:20%;padding-bottom: 3%;padding-top: 2%;width: 100%;">
         <form method="post" action="/allblocks_search">
-        <input type="text" placeholder="Search by Block ID.." name="id" >
-       <button type="submit" class="a-inside edit">Search</button>
+        <input type="text" placeholder="    Search by Block ID.." name="id" style="width: 71%; border-radius: 25px;">
+       <button type="submit" class="a-inside edit" style=" border-radius: 25px;">Search</button>
         </form>
     </div>
 
     <div class="data-table">
-        <table border="1" cellpadding="7" cellspacing="7"  id="example">
+        <table cellspacing="0" cellpadding="0">
            <!-- <lable ><b> Block List</b></lable>-->
             <tr >
                 <th>Block ID</th>
-                <th>Created@</th>
+                <th>Timestamp</th>
                 <th>Transaction Count</th>
             </tr>
 

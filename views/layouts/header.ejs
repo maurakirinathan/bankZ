@@ -10,14 +10,14 @@
 
 <body>
 <div id="wrapper">
-    <div class="page-header" id="header">
+<!--    <div class="page-header" id="header">
 
 
         <span style="font-size:30px;cursor:pointer"onclick="openNav()">&#9776;</span>
         <h2><%= page_title %></h2>
-<!--        <h2 style="color: white">Sampath Bank</h2>-->
+&lt;!&ndash;        <h2 style="color: white">Sampath Bank</h2>&ndash;&gt;
         <img id="logo" src="/../images/bank-logo-light.png">
-    </div>
+    </div>-->
 
     <!--         <div class="topnav">
                  <a class="active" href="/allblocks">ALL BLOCKS</a>
@@ -70,6 +70,18 @@
         <a  class="navBar" href="/allcheques" ><img src="../images/cheque1.png" height="80px" width="80px"/><br> All Cheques</a>
         <a  class="navBar" href="/alltrasdisplay" ><img src="../images/transection.png" height="80px" width="80px"/><br>  All Transaction</a>
     </div>-->
+
+
+    <div id="mySidenav" class="sidenav" style="width: 16%;" >
+        <img  src="../images/bank-logo-light.png" style="padding-left:10%;padding-bottom: 5%;padding-top:10%;">
+        <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
+        <a  class=" active" href="/allblocks" style="padding-left:10%;" onclick="check1()" ><i class="fa fa-home"></i>    All Blocks</a>
+        <a  class="navBar" href="/pendingTransaction"  style="padding-left:10%;"><i class="fa fa-upload"></i>  Processing Transaction</a>
+        <a  class="navBar" href="/allcheques" style="padding-left:10%;"  onclick="check2()"><i class="fa fa-money"></i>   All Cheques</a>
+        <a  class="navBar" href="/alltrasdisplay" style="padding-left:10%;"><i class="fa fa-window-restore"></i>  All Transaction</a>
+
+    </div>
+
     <script>
 
 
@@ -99,3 +111,5 @@
     <div class="content-wrap">
         <div class="page-container">
         </div>
+
+

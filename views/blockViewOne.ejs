@@ -9,30 +9,33 @@
 </div>
 
 
-<div class="page-data" id="datatable">
+<div class="page-data" >
 
-<div id="wrapper2">
-    <table cellpadding="11">
+<div id="wrapper2" class="data-table-mini" style="padding-top:2%">
+    <label  style="font-size: 24px;padding-top:15%;padding-bottom:4%;"><b>Block ID # <%=data[0].id%></b></label>
+<div style="font-size: 24px;padding-top:2%;padding-bottom:1%;">
+    <label  ><b>Info</b></label></div>
+    <table cellpadding="12" >
+     <!--   <tr>
+            <td class="label" style="font-size: 24px;">Block ID</td><td style="font-size: 24px;">: <%=data[0].id%></td>
+        </tr>-->
         <tr>
-            <td class="label">Block ID</td><td>: <%=data[0].id%></td>
+            <td class="label" valign="top">Bank ID</td><td align="right"><%=data[0].bank%></td>
         </tr>
         <tr>
-            <td class="label" valign="top">Bank ID</td><td>:<%=data[0].bank%></td>
+            <td class="label" valign="top">Hash</td><td  align="right"><%=data[0].hash%></td>
         </tr>
         <tr>
-            <td class="label" valign="top">Hash</td><td>:<%=data[0].hash%></td>
+            <td class="label" valign="top">Merkle Root</td><td  align="right"><%=data[0].merkle_root%></td>
         </tr>
         <tr>
-            <td class="label" valign="top">Merkle Root</td><td>:<%=data[0].merkle_root%></td>
+            <td class="label" valign="top">Pre-Hash</td><td  align="right"><%=data[0].pre_hash%></td>
         </tr>
         <tr>
-            <td class="label" valign="top">Pre-Hash</td><td>:<%=data[0].pre_hash%></td>
+            <td class="label" valign="top">Signatures</td><td  align="right"><%=data[0].signatures%></td>
         </tr>
         <tr>
-            <td class="label" valign="top">Signatures</td><td>:<%=data[0].signatures%></td>
-        </tr>
-        <tr>
-            <td class="label" valign="top">Created</td><td>:<%=data[0].timestamp%></td>
+            <td class="label" valign="top">Created</td><td  align="right"><%=data[0].timestamp%></td>
         </tr>
 
 

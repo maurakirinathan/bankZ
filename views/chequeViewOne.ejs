@@ -11,19 +11,20 @@
 
 <div class="page-data" id="datatable">
 
-<div id="wrapper4">
+<div id="wrapper4" class="data-table-mini" style="padding-top:2%">
+    <label  style="font-size: 24px;padding-top:15%;padding-bottom:4%;"><b>Cheque ID # <%=data[0].id%></b></label>
         <table cellpadding="11">
-            <tr>
+        <!--    <tr>
                 <td class="label">Cheque ID</td><td>: <%=data[0].id%></td>
+            </tr>-->
+            <tr>
+                <td class="label" valign="top">Bank ID</td><td align="right"><%=data[0].bank%></td>
             </tr>
             <tr>
-                <td class="label" valign="top">Bank ID</td><td>:<%=data[0].bank%></td>
+                <td class="label" valign="top">Amount</td><td align="right"><%=data[0].amount%></td>
             </tr>
             <tr>
-                <td class="label" valign="top">Amount</td><td>:<%=data[0].amount%></td>
-            </tr>
-            <tr>
-                <td class="label" valign="top">Date</td><td>:<%=data[0].date%></td>
+                <td class="label" valign="top">Date</td><td align="right"> <%=data[0].date%></td>
             </tr>
          </table>
 

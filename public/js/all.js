@@ -16,6 +16,7 @@ var t1 = true;
 function openNav() {
 
     if (t1) {
+        document.getElementById("datatable").style.marginLeft = "170px";
         document.getElementById("mySidenav").style.width = "170px";
         document.getElementById("header").style.marginLeft = "169px";
         document.getElementById("header").style.width = "89%";
@@ -48,6 +49,9 @@ jQuery(document).ready(function($) {
     });
 });
 
+document.getElementById("datatable").style.marginLeft = "170px";
+document.getElementById("mySidenav").style.width = "170px";
+
 /*
 
 function blocksclick() {
@@ -78,3 +82,16 @@ function transectionsclick() {
     document.getElementById("4").style.backgroundColor= "#FFA500 !important";
 }
 */
+
+
+/*
+function check1() {
+    alert("123")
+    document.getElementById("#container1").load("http://localhost:8081/allcheques");
+}
+
+
+function check2() {
+    alert("123")
+    document.getElementById("#container2").load("http://localhost:8081/allcheques");
+}*/
