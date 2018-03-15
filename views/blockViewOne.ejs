@@ -2,51 +2,101 @@
 <div id="mySidenav" class="sidenav">
     <!--    <img  src="../images/bank-logo-light.png" style="padding-left:14%;">-->
     <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
-    <a  class=" active" href="/allblocks" ><img src="../images/block.png" height="70px" width="115px"/><br>     All Blocks</a>
-    <a  class="navBar" href="/pendingTransaction"  ><img src="../images/process.png" height="80px" width="80px"/><br>Processing Transaction</a>
-    <a  class="navBar" href="/allcheques" ><img src="../images/cheque1.png" height="80px" width="80px"/><br> All Cheques</a>
-    <a  class="navBar" href="/alltrasdisplay" ><img src="../images/transection.png" height="80px" width="80px"/><br>  All Transaction</a>
+    <a class=" active" href="/allblocks"><img src="../images/block.png" height="70px" width="115px"/><br> All Blocks</a>
+    <a class="navBar" href="/pendingTransaction"><img src="../images/process.png" height="80px" width="80px"/><br>Processing
+        Transaction</a>
+    <a class="navBar" href="/allcheques"><img src="../images/cheque1.png" height="80px" width="80px"/><br> All
+        Cheques</a>
+    <a class="navBar" href="/alltrasdisplay"><img src="../images/transection.png" height="80px" width="80px"/><br> All
+        Transaction</a>
 </div>
 
 
-<div class="page-data" >
+<div class="page-data">
 
-<div id="wrapper2" class="data-table-mini" style="padding-top:2%">
-    <label  style="font-size: 24px;padding-top:15%;padding-bottom:4%;"><b>Block ID # <%=data[0].id%></b></label>
-<div style="font-size: 24px;padding-top:2%;padding-bottom:1%;">
-    <label  ><b>Info</b></label></div>
-    <table cellpadding="12" >
-     <!--   <tr>
-            <td class="label" style="font-size: 24px;">Block ID</td><td style="font-size: 24px;">: <%=data[0].id%></td>
+    <div id="wrapper2" class="data-table-mini" style="padding-top:2%">
+        <label style="font-size: 24px;padding-top:15%;padding-bottom:4%;"><b>Block ID # <%= data[0].id %></b></label>
+        <div style="font-size: 24px;padding-top:2%;padding-bottom:1%;">
+            <label><b>Info</b></label></div>
+        <table cellpadding="12">
+            <!--   <tr>
+            <td class="label" style="font-size: 24px;">Block ID</td><td style="font-size: 24px;">: <%= data[0].id %></td>
         </tr>-->
-        <tr>
-            <td class="label" valign="top">Bank</td><td align="right"><%=data[0].bank%></td>
-        </tr>
-        <tr>
-            <td class="label" valign="top">Hash</td><td  align="right"><%=data[0].hash%></td>
-        </tr>
-        <tr>
-            <td class="label" valign="top">Merkle Root</td><td  align="right"><%=data[0].merkle_root%></td>
-        </tr>
-        <tr>
-            <td class="label" valign="top">Pre-Hash</td><td  align="right"><%=data[0].pre_hash%></td>
-        </tr>
-        <tr>
-            <td class="label" valign="top">Signatures</td><td  align="right"><%=data[0].signatures%></td>
-        </tr>
-        <tr>
-            <td class="label" valign="top">Timestamp</td><td  align="right"><%=data[0].timestamp%></td>
-        </tr>
-
-
-    </table>
-</div>
-    <div >
-        <%- include alltransaction_blocks.ejs %>
+            <tr>
+                <td class="label" valign="top">Miner</td>
+                <td align="right"><%= data[0].miner %></td>
+            </tr>
+            <tr>
+                <td class="label" valign="top">Hash</td>
+                <td align="right"><%= data[0].hash %></td>
+            </tr>
+            <tr>
+                <td class="label" valign="top">Merkle Root</td>
+                <td align="right"><%= data[0].merkle_root %></td>
+            </tr>
+            <tr>
+                <td class="label" valign="top">Pre-Hash</td>
+                <td align="right"><%= data[0].pre_hash %></td>
+            </tr>
+            <tr>
+                <td class="label" valign="top">Signatures</td>
+                <td align="right"><%= data[0].signatures %></td>
+            </tr>
+            <tr>
+                <td class="label" valign="top">Timestamp</td>
+                <td align="right"><%= data[0].timestamp %></td>
+            </tr>
+        </table>
     </div>
-</div>
+
+    <div class="data-table" style="padding-top: 4%;">
+        <table cellpadding="7" cellspacing="7">
+            <!--            <lable ><b> Processing List</b></lable>-->
+            <tr>
+                <th>Transaction ID</th>
+                <th>Bank</th>
+                <th>Promize Amount</th>
+                <th>From Acc</th>
+                <th>To Acc</th>
+                <th>Timestamp</th>
+
+            </tr>
+
+            <% if(data[0].transactions.length){
+
+            for(var i = 0;i < data[0].transactions.length;i++) { %>
+
+            <tr>
+                <td><%= data[0].transactions[i].id %></td>
+                <td><%= data[0].transactions.bank %></td>
+                <td><%= data[0].transactions.promize_amount %></td>
+                <td><%= data[0].transactions.from_account %></td>
+                <td><%= data[0].transactions.to_account %></td>
+                <td><%= data[0].transactions.timestamp %></td>
+                <!-- <td>
+                    <a class="a-inside edit" href="/pendingTransaction/<%= data[i].id %>">View</a>
+                </td>-->
+
+            </tr>
+            <% }
+
+            }else{ %>
+            <tr>
+                <td colspan="6">No data available</td>
+            </tr>
+            <% } %>
+
+        </table>
+    <!--    <div align="right" style="padding-top: 2%;">
+            <% if(data.length){ %>
+            <a class="a-inside edit" href="/allTransaction_previous/<%= data[0].id %>">Previous</a><a
+                    class="a-inside edit" href='/allTransaction_next/<%= data[data.length - 1].id %>'>Next</a>
+            <% } %>
+        </div>-->
+    </div>
 
 </div>
-</div>
+
+
 
 <%- include layouts/footer.ejs %>

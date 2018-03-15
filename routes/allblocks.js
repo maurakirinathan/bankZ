@@ -7,11 +7,9 @@ var port = properties.get('db.port');
 var keyspace = properties.get('db.keyspace');
 
 
-/*
-var host =  process.env.CASSANDRA_HOST;
+/*var host =  process.env.CASSANDRA_HOST;
 var port = process.env.CASSANDRA_PORT;
-var keyspace = process.env.CASSANDRA_KEYSPACE;
-*/
+var keyspace = process.env.CASSANDRA_KEYSPACE;*/
 
 
 
