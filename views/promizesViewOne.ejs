@@ -12,7 +12,9 @@
 <div class="page-data" id="datatable">
 
 <div id="wrapper4" class="data-table-mini" style="padding-top:2%">
-    <label  style="font-size: 24px;padding-top:15%;padding-bottom:4%;"><b>Cheque ID # <%=data[0].id%></b></label>
+    <label  style="font-size: 24px;padding-top:15%;padding-bottom:4%;"><b>Promize ID # <%=data[0].id%></b></label>
+    <div style="font-size: 24px;padding-top:2%;padding-bottom:1%;">
+        <label  ><b>Info</b></label></div>
         <table cellpadding="11">
         <!--    <tr>
                 <td class="label">Cheque ID</td><td>: <%=data[0].id%></td>
@@ -28,20 +30,20 @@
             </tr>
          </table>
 
-</div> <div style="padding-top: 25px;">
+</div><!-- <div style="padding-top: 25px;">
 
     <div id="wrapper5">
         <img class="rotate" src="data:image/png;base64,<%=data[0].img%>" alt="Cheque Image" >
 
     </div>
     </div>
+-->
 
 
 
 
-
-    <div >
-    <%- include alltrans.ejs %>
+    <div style="padding-top: 4%;" >
+    <%- include alltransaction_promize.ejs %>
     </div>
 </div>
 

@@ -12,22 +12,22 @@
 
 <div class="page-data" id="datatable">
 
-    <div style="float: right;">
+    <div style="padding-left:20%;padding-bottom: 3%;padding-top: 2%;width: 100%;">
         <form method="post" action="/transection_search">
-            <input type="text" placeholder="Search by Transaction ID.." name="id" >
-            <button type="submit" class="a-inside edit">Search</button>
+            <input type="text" placeholder="    Search by Transaction ID.." name="id" style="width: 71%; border-radius: 25px;">
+            <button type="submit" class="a-inside edit" style=" border-radius: 25px;">Search</button>
         </form>
     </div>
     <div class="data-table">
         <table  cellpadding="7" cellspacing="7">
-<!--            <lable ><b> Transaction List</b></lable>-->
+            <!--            <lable ><b> Processing List</b></lable>-->
             <tr>
                 <th>Transaction ID</th>
-                <th>Bank ID</th>
-                <th>Check Amount</th>
-                <th>Check ID</th>
-                <th>From ACC</th>
-                <th>Created@</th>
+                <th>Bank</th>
+                <th>Promize Amount</th>
+                <th>From Acc</th>
+                <th>To Acc</th>
+                <th>Timestamp</th>
 
             </tr>
 
@@ -35,15 +35,15 @@
 
             for(var i = 0;i < data.length;i++) { %>
 
-            <tr class='clickable-row' data-href='/transview/<%= data[i].id %>'>
+            <tr  class='clickable-row' data-href='/transview/<%= data[i].id %>'>
                 <td><%= data[i].id %></td>
-                <td><%= data[i].bank_id %></td>
-                <td><%= data[i].cheque_amount %></td>
-                <td><%= data[i].cheque_id %></td>
-                <td><%= data[i].from_acc %></td>
+                <td><%= data[i].bank %></td>
+                <td><%= data[i].promize_amount %></td>
+                <td><%= data[i].from_account %></td>
+                <td><%= data[i].to_account %></td>
                 <td><%= data[i].timestamp %></td>
-             <!--   <td>
-                                <a class="a-inside edit" href="/transview/<%=data[i].id%>">View</a>
+                <!-- <td>
+                    <a class="a-inside edit" href="/pendingTransaction/<%=data[i].id%>">View</a>
                 </td>-->
 
             </tr>

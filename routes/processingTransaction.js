@@ -11,9 +11,9 @@ var keyspace = properties.get('db.keyspace');
 var port = process.env.CASSANDRA_PORT;
 var keyspace = process.env.CASSANDRA_KEYSPACE;*/
 
-
+/*
 console.log('host: ' +host);
-console.log('port: ' +port);
+console.log('port: ' +port);*/
 
 var client = new cassandra.Client({contactPoints: [host+':'+port], keyspace: keyspace});
 client.connect(function (err, result) {
@@ -33,8 +33,8 @@ exports.list = function (req, res) {
             console.log('pending trans: list err:', err);
             res.status(404).send({msg: err});
         } else {
-            console.log('pending transaction: list succ:', result.rows);
-            res.render('pendingTransaction', {page_title: "Processing Transactions", data: result.rows})
+            console.log('processing Transaction transaction: list succ:', result.rows);
+            res.render('processingTransaction', {page_title: "Processing Transactions", data: result.rows})
         }
     });
 
@@ -53,8 +53,8 @@ exports.list_one = function (req, res) {
             console.log('trans: viewing one err:', err);
             res.status(404).send({msg: err});
         } else {
-            console.log('transactions: viewing one succ:');
-            res.render('transViewOne', {page_title: "Processing Transactions Details", data: result.rows});
+            console.log('processing Transaction View One: viewing one succ:');
+            res.render('processingTransactionViewOne', {page_title: "Processing Transactions Details", data: result.rows});
         }
     });
 
@@ -79,15 +79,15 @@ exports.list_search = function (req, res) {
                 res.render('trans', {page_title: "trans Details",});
                 //  allblocks();
             } else {
-                console.log('pending trans: search one succ:');
-                res.render('pendingTransaction', {page_title: "Processing Transactions Details", data: result.rows});
+                console.log('processing Transaction: search one succ:');
+                res.render('processing Transaction', {page_title: "Processing Transactions Details", data: result.rows});
             }
         });
     }
     else
     {
         var result=[];
-        res.render('pendingTransaction', {page_title: "Transaction Details", data:result});
+        res.render('processing Transaction', {page_title: "Transaction Details", data:result});
 
     }
 };
@@ -106,8 +106,8 @@ exports.list_paging_next = function (req, res) {
             console.log('pendingTransaction: list err:', err);
             res.status(404).send({msg: err});
         } else {
-            console.log('pendingTransaction: list succ:', result.rows);
-            res.render('pendingTransaction', {page_title: "Processing Transactions", data: result.rows})
+            console.log('processing Transaction: list succ:', result.rows);
+            res.render('processingTransaction', {page_title: "Processing Transactions", data: result.rows})
 
         }
     });
@@ -127,8 +127,8 @@ exports.list_paging_previous = function (req, res) {
             console.log('pendingTransaction: list err:', err);
             res.status(404).send({msg: err});
         } else {
-            console.log('pendingTransaction: list succ:', result.rows);
-            res.render('pendingTransaction', {page_title: "Processing Transactions", data: result.rows})
+            console.log('processing Transaction: list succ:', result.rows);
+            res.render('processingTransaction', {page_title: "Processing Transactions", data: result.rows})
         }
     });
 

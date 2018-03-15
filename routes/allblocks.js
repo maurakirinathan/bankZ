@@ -6,8 +6,8 @@ var host =  properties.get('db.host');
 var port = properties.get('db.port');
 var keyspace = properties.get('db.keyspace');
 
-/*
 
+/*
 var host =  process.env.CASSANDRA_HOST;
 var port = process.env.CASSANDRA_PORT;
 var keyspace = process.env.CASSANDRA_KEYSPACE;
@@ -44,6 +44,25 @@ exports.list = function (req, res) {
     });
 
 };
+
+
+
+exports.list_alltransaction_blocks = function (req, res) {
+
+    console.log('alltransaction_blocks: list');
+    client.execute('SELECT * FROM transactions LIMIT 10', [], function (err, result) {
+        if (err) {
+            console.log('alltransaction_blocks: list err:', err);
+            res.status(404).send({msg: err});
+        } else {
+            console.log('alltransaction_blocks: list succ:', result.rows);
+            res.render('alltransaction_blocks', {page_title: "All Blocks", data: result.rows})
+        }
+    });
+
+};
+
+
 
 /*
  * GET one block.

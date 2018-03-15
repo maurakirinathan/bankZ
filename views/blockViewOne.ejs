@@ -20,7 +20,7 @@
             <td class="label" style="font-size: 24px;">Block ID</td><td style="font-size: 24px;">: <%=data[0].id%></td>
         </tr>-->
         <tr>
-            <td class="label" valign="top">Bank ID</td><td align="right"><%=data[0].bank%></td>
+            <td class="label" valign="top">Bank</td><td align="right"><%=data[0].bank%></td>
         </tr>
         <tr>
             <td class="label" valign="top">Hash</td><td  align="right"><%=data[0].hash%></td>
@@ -35,14 +35,14 @@
             <td class="label" valign="top">Signatures</td><td  align="right"><%=data[0].signatures%></td>
         </tr>
         <tr>
-            <td class="label" valign="top">Created</td><td  align="right"><%=data[0].timestamp%></td>
+            <td class="label" valign="top">Timestamp</td><td  align="right"><%=data[0].timestamp%></td>
         </tr>
 
 
     </table>
 </div>
     <div >
-        <%- include alltrans.ejs %>
+        <%- include alltransaction_blocks.ejs %>
     </div>
 </div>
 

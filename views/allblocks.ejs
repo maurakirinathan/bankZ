@@ -33,6 +33,7 @@
                 <th>Block ID</th>
                 <th>Timestamp</th>
                 <th>Transaction Count</th>
+                <th>Mined by</th>
             </tr>
 
             <% if(data.length){
@@ -40,9 +41,10 @@
             for(var i = 0;i < data.length;i++) { %>
 
             <tr  class='clickable-row' data-href='/allblocks/<%= data[i].id %>'>
-               <td><%= data[i].hash %> </td>
+               <td><%= data[i].id %> </td>
                 <td><%= data[i].timestamp %></td>
                 <td><%= data[i].transactions.length %></td>
+                <td><%= data[i].miner %></td>
 
 
             <!--    <td>

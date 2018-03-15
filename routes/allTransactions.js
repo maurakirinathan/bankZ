@@ -7,15 +7,13 @@ var host =  properties.get('db.host');
 var port = properties.get('db.port');
 var keyspace = properties.get('db.keyspace');
 
-/*
-var host =  process.env.CASSANDRA_HOST;
+/*var host =  process.env.CASSANDRA_HOST;
 var port = process.env.CASSANDRA_PORT;
-var keyspace = process.env.CASSANDRA_KEYSPACE;
-*/
+var keyspace = process.env.CASSANDRA_KEYSPACE;*/
 
-
+/*
 console.log('host: ' +host);
-console.log('port: ' +port);
+console.log('port: ' +port);*/
 
 
 
@@ -29,20 +27,7 @@ client.connect(function (err, result) {
 /*
  * GET trans listing .
  */
-exports.list_trans = function (req, res) {
 
-    console.log('alltrans: list');
-    client.execute('SELECT * FROM transactions  LIMIT 10', [], function (err, result) {
-        if (err) {
-            console.log('alltrans: list err:', err);
-            res.status(404).send({msg: err});
-        } else {
-            console.log('alltrans: list succ:', result.rows);
-            res.render('alltrans', {page_title: "All Transactions", data: result.rows})
-        }
-    });
-
-};
 
 
 /*
@@ -70,14 +55,14 @@ exports.list_one = function (req, res) {
  */
 exports.list_trans_display = function (req, res) {
 
-    console.log('alltrans: list');
+    console.log('alltransaction: list');
     client.execute('SELECT * FROM transactions LIMIT 10', [], function (err, result) {
         if (err) {
-            console.log('alltrans: list err:', err);
+            console.log('alltransaction: list err:', err);
             res.status(404).send({msg: err});
         } else {
-            console.log('alltrans: list succ:', result.rows);
-            res.render('alltransdisplay', {page_title: "All Transactions", data: result.rows})
+            console.log('alltransaction: list succ:', result.rows);
+            res.render('alltransaction', {page_title: "All Transactions", data: result.rows})
         }
     });
 
@@ -97,20 +82,20 @@ exports.list_search = function (req, res) {
     if (validate(input.id)) {
         client.execute("SELECT * from transactions WHERE id = " + input.id + " ALLOW FILTERING", [], function (err, result) {
             if (err) {
-                console.log('pending transaction: search one err:', err);
+                console.log(' transaction: search one err:', err);
                 res.status(404).send({msg: err});
-                res.render('alltransdisplay', {page_title: "Transaction Details",});
+                res.render('alltransaction', {page_title: "Transaction Details",});
                 //  allblocks();
             } else {
-                console.log('pending transaction: search one succ:');
-                res.render('alltransdisplay', {page_title: "Transaction Details", data: result.rows});
+                console.log(' transaction: search one succ:');
+                res.render('alltransaction', {page_title: "Transaction Details", data: result.rows});
             }
         });
     }
     else
     {
         var result=[];
-        res.render('alltransdisplay', {page_title: "Transaction Details", data:result});
+        res.render('alltransaction', {page_title: "Transaction Details", data:result});
 
     }
 };
@@ -121,17 +106,17 @@ exports.list_search = function (req, res) {
  */
 exports.list_paging_next = function (req, res) {
 
-    console.log('alltrans: list');
+    console.log('alltransaction: list');
     var id = req.params.id;
 
     console.log('id:  ' +id );
     client.execute("SELECT * FROM transactions WHERE id > "+ id + "LIMIT 10 ALLOW FILTERING", [], function (err, result) {
         if (err) {""
-            console.log('alltrans: list err:', err);
+            console.log('alltransaction: list err:', err);
             res.status(404).send({msg: err});
         } else {
-            console.log('alltrans: list succ:', result.rows);
-            res.render('alltransdisplay', {page_title: "All Transactions", data: result.rows})
+            console.log('alltransaction: list succ:', result.rows);
+            res.render('alltransaction', {page_title: "All Transactions", data: result.rows})
 
         }
     });
@@ -143,16 +128,16 @@ exports.list_paging_next = function (req, res) {
  */
 exports.list_paging_previous = function (req, res) {
 
-    console.log('alltrans: list');
+    console.log('alltransaction: list');
     var id = req.params.id;
     console.log('id:', id);
     client.execute("SELECT * FROM transactions WHERE expr(transaction_lucene_index," +"\'{ sort: [ {type: \"simple\", field: \"id\", reverse: true} ] }"+"\') AND bank='sampath' AND id <"+ id + " LIMIT 10 ALLOW FILTERING", [], function (err, result) {
         if (err) {""
-            console.log('alltrans: list err:', err);
+            console.log('alltransaction: list err:', err);
             res.status(404).send({msg: err});
         } else {
-            console.log('alltrans: list succ:', result.rows);
-            res.render('alltransdisplay', {page_title: "All Transactions", data: result.rows})
+            console.log('alltransaction: list succ:', result.rows);
+            res.render('alltransaction', {page_title: "All Transactions", data: result.rows})
         }
     });
 

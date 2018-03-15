@@ -11,21 +11,22 @@
 
 
 <div class="page-data"  id="datatable">
-    <div class="data-table">
 
-        <div style="float: right;">
+
+        <div style="padding-left:20%;padding-bottom: 3%;padding-top: 2%;width: 100%;">
             <form method="post" action="/allCheque_search">
-                <input type="text" placeholder="Search by Cheque ID.." name="id" >
-                <button type="submit" class="a-inside edit">Search</button>
+                <input type="text" placeholder="    Search by Promize ID.." name="id" style="width: 71%; border-radius: 25px;">
+                <button type="submit" class="a-inside edit" style=" border-radius: 25px;">Search</button>
             </form>
         </div>
+    <div class="data-table">
         <table  cellpadding="7" cellspacing="7">
          <!--   <lable ><b> Cheque List</b></lable>-->
             <tr>
-                <th>Cheque ID</th>
-                <th>Bank ID</th>
-                <th>Date</th>
-                <th>Cheque Amount</th>
+                <th>Promize ID</th>
+                <th>Bank</th>
+ <!--               <th>Date</th>-->
+                <th>Promize Amount</th>
 
 
             </tr>
@@ -34,10 +35,10 @@
 
             for(var i = 0;i < data.length;i++) { %>
 
-            <tr class='clickable-row' data-href='/chequeview/<%= data[i].id %>'>
+            <tr class='clickable-row' data-href='/promizesview/<%= data[i].id %>'>
                 <td><%=data[i].id%></td>
-                <td><%=data[i].bank_id%></td>
-                <td><%=data[i].date%></td>
+                <td><%=data[i].bank%></td>
+              <!--  <td><%=data[i].date%></td>-->
                 <td><%=data[i].amount%></td>
 
                <!-- <td>
