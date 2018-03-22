@@ -1,0 +1,52 @@
+
+<div class="page-data" id="datatable" >
+
+
+    <div class="data-table">
+             <table cellspacing="0" cellpadding="0">
+           <!-- <lable ><b> Block List</b></lable>-->
+
+            <tr >
+                <th>Block ID</th>
+                <th>Timestamp</th>
+                <th>Transaction Count</th>
+                <th>Mined by</th>
+            </tr>
+
+            <% if(data.length){
+
+            for(var i = 0;i < data.length;i++) { %>
+
+            <tr  class='clickable-row' data-href='/allblocks/<%= data[i].id %>'>
+               <td><%= data[i].id %> </td>
+                <td><%= data[i].timestamp %></td>
+                <td><%= data[i].transactions.length %></td>
+                <td><%= data[i].miner %></td>
+
+
+            <!--    <td>
+                    <a class="a-inside edit" href="/allblocks/<%= data[i].id %>">View</a>
+                </td>-->
+            </tr>
+
+
+            <% }
+
+            }else{ %>
+            <tr>
+                <td colspan="6">No data available</td>
+            </tr>
+            <% } %>
+
+        </table>
+        <div align="right" style="padding-top: 2%;">
+            <% if(data.length){%>
+            <a class="a-inside edit" href="/allblocks_previous/<%=data[0].id%>">Previous</a><a class="a-inside edit" href='/allblocks_next/<%=data[data.length-1].id%>'>Next</a>
+                     <%}%>
+        </div>
+    </div>
+    <div id="status">0 | 0</div>
+    <div id="wrap">
+</div>
+
+

@@ -49,7 +49,7 @@ app.post('/allblocks_search',allblocks.list_search);
 app.post('/alltransaction_blocks',allblocks.list_alltransaction_blocks);
 
 //app.get('/allblocks_previous/:id',allblocks.list_paging_previous);
-//app.get('/allblocks_next/:id',allblocks.list_paging_next);
+app.get('/allblocks_next/:id',allblocks.list_paging_next);
 
 
 

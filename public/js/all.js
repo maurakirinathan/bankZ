@@ -49,8 +49,8 @@ jQuery(document).ready(function($) {
     });
 });
 
-document.getElementById("datatable").style.marginLeft = "170px";
-document.getElementById("mySidenav").style.width = "170px";
+//document.getElementById("datatable").style.marginLeft = "170px";
+//document.getElementById("mySidenav").style.width = "170px";
 
 /*
 
@@ -95,3 +95,11 @@ function check2() {
     alert("123")
     document.getElementById("#container2").load("http://localhost:8081/allcheques");
 }*/
+
+/*
+$(window).scroll(function() {
+    if($(window).scrollTop() == $(document).height() - $(window).height()) {
+        // ajax call get data from server and append to the div
+        alert("123");
+    }
+});*/

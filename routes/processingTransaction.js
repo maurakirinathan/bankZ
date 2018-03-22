@@ -80,7 +80,7 @@ exports.list_search = function (req, res) {
                 //  allblocks();
             } else {
                 console.log('processing Transaction: search one succ:');
-                res.render('processing Transaction', {page_title: "Processing Transactions Details", data: result.rows});
+                res.render('processingTransaction', {page_title: "Processing Transactions Details", data: result.rows});
             }
         });
     }

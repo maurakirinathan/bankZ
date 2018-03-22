@@ -12,9 +12,40 @@
     <a  class="navBar" href="/alltrasdisplay" ><img src="../images/transection.png" height="80px" width="80px"/><br>  All Transaction</a>
 </div>
 -->
+<style>
+    div#status{position:fixed; font-size:24px;}
+    div#wrap{width:800px; margin:0px auto;}
+/*    div.newData{height:1000px; background:#09F; margin:10px 0px;}*/
+    div.newData{}
+</style>
+<script>
+ /*   $(window).scroll(function() {
+        if($(window).scrollTop() == $(document).height() - $(window).height()) {
+           alert("123");
+           window.location.href = '/allblocks_next/<%=data[data.length-1].id%>';
+        }
+    });
+*/
 
+    function yHandler(){
+        // Watch video for line by line explanation of the code
+        // http://www.youtube.com/watch?v=eziREnZPml4
+        var wrap = document.getElementById('wrap');
+        var contentHeight = wrap.offsetHeight;
+        var yOffset = window.pageYOffset;
+        var y = yOffset + window.innerHeight;
+        if(y >= contentHeight){
+            // Ajax call to get more dynamic data goes here
+            window.location.href = '/allblocks_next/<%=data[data.length-1].id%>';
+            wrap.innerHTML += '<div class="newData"> rwrwe</div>';
 
+        }
+     //   var status = document.getElementById('status');
+      //  status.innerHTML = contentHeight+" | "+y;
+    }
+    //window.onscroll = yHandler;
 
+</script>
 
 <div class="page-data" id="datatable" >
 
@@ -27,8 +58,9 @@
     </div>
 
     <div class="data-table">
-        <table cellspacing="0" cellpadding="0">
+             <table cellspacing="0" cellpadding="0">
            <!-- <lable ><b> Block List</b></lable>-->
+
             <tr >
                 <th>Block ID</th>
                 <th>Timestamp</th>
@@ -68,6 +100,8 @@
                      <%}%>
         </div>
     </div>
+    <div id="status">0 | 0</div>
+    <div id="wrap">
 </div>
 
 
