@@ -6,11 +6,12 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "cassandra-driver": "*",
     "ejs": "^1.0.0",
     "express": "3.5.1",
     "express-myconnection": "1.0.4",
     "jade": "*",
-    "cassandra-driver": "*",
     "properties-reader": "*"
   },
   "devDependencies": {

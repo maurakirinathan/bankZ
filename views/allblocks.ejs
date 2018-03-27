@@ -19,29 +19,29 @@
     div.newData{}
 </style>
 <script>
- /*   $(window).scroll(function() {
-        if($(window).scrollTop() == $(document).height() - $(window).height()) {
-           alert("123");
-           window.location.href = '/allblocks_next/<%=data[data.length-1].id%>';
-        }
+
+    $(window).scroll(function() {
+       yHandler();
     });
-*/
+
 
     function yHandler(){
-        // Watch video for line by line explanation of the code
-        // http://www.youtube.com/watch?v=eziREnZPml4
+
         var wrap = document.getElementById('wrap');
         var contentHeight = wrap.offsetHeight;
         var yOffset = window.pageYOffset;
         var y = yOffset + window.innerHeight;
         if(y >= contentHeight){
             // Ajax call to get more dynamic data goes here
-            window.location.href = '/allblocks_next/<%=data[data.length-1].id%>';
-            wrap.innerHTML += '<div class="newData"> rwrwe</div>';
 
+
+         $.getJSON('/allblocks_next/' + $("#blockrows tr:last>td:first").text(), function(data){
+             data.filter(function (data, i){
+                   var url = '/allblocks/'
+                 $("#blockrows").append("<tr class='clickable-row' data-href='"+url+data.id+"' ><td><a href="+url+data.id+" > " +  data.id + "</a></td> <td>" + data.timestamp + "</td> <td>" + data.transactions.length + "</td> <td>" + data.miner + "</td> </tr>");
+             });
+         })
         }
-     //   var status = document.getElementById('status');
-      //  status.innerHTML = contentHeight+" | "+y;
     }
     //window.onscroll = yHandler;
 
@@ -68,20 +68,16 @@
                 <th>Mined by</th>
             </tr>
 
+                 <tbody id="blockrows">
             <% if(data.length){
 
             for(var i = 0;i < data.length;i++) { %>
 
-            <tr  class='clickable-row' data-href='/allblocks/<%= data[i].id %>'>
-               <td><%= data[i].id %> </td>
+            <tr class=''>
+                <td><a href='/allblocks/<%= data[i].id %>'><%=data[i].id%></a></td>
                 <td><%= data[i].timestamp %></td>
                 <td><%= data[i].transactions.length %></td>
                 <td><%= data[i].miner %></td>
-
-
-            <!--    <td>
-                    <a class="a-inside edit" href="/allblocks/<%= data[i].id %>">View</a>
-                </td>-->
             </tr>
 
 
@@ -92,15 +88,16 @@
                 <td colspan="6">No data available</td>
             </tr>
             <% } %>
+                 </tbody>
 
         </table>
-        <div align="right" style="padding-top: 2%;">
+    <!--    <div align="right" style="padding-top: 2%;">
             <% if(data.length){%>
             <a class="a-inside edit" href="/allblocks_previous/<%=data[0].id%>">Previous</a><a class="a-inside edit" href='/allblocks_next/<%=data[data.length-1].id%>'>Next</a>
                      <%}%>
-        </div>
+        </div>-->
     </div>
-    <div id="status">0 | 0</div>
+    <div id="status"></div>
     <div id="wrap">
 </div>
 

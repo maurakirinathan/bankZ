@@ -9,6 +9,7 @@
 </div>
 <div class="page-data">
     <div class="data-table"  id="datatable">
+        <label style="font-size: 24px;padding-top:15%;padding-bottom:4%;"><b>Transactions</b></label>
         <table  cellpadding="7" cellspacing="7">
             <!--            <lable ><b> Processing List</b></lable>-->
             <tr>
@@ -25,7 +26,8 @@
 
             for(var i = 0;i < data.length;i++) { %>
 
-            <tr  class='clickable-row' data-href='/processingTransaction/<%= data[i].id %>'>
+<!--            <tr  class='clickable-row' data-href='/processingTransaction/<%= data[i].id %>'>-->
+            <tr>
                 <td><%= data[i].id %></td>
                 <td><%= data[i].bank %></td>
                 <td><%= data[i].promize_amount %></td>

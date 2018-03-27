@@ -9,6 +9,40 @@
     <a  class="navBar " href="/allcheques" ><img src="../images/cheque1.png" height="80px" width="80px"/><br> All Cheques</a>
     <a  class="navBar active" href="/alltrasdisplay" ><img src="../images/transection.png" height="80px" width="80px"/><br>  All Transaction</a>
 </div>
+<style>
+    div#status{position:fixed; font-size:24px;}
+    div#wrap{width:800px; margin:0px auto;}
+    /*    div.newData{height:1000px; background:#09F; margin:10px 0px;}*/
+    div.newData{}
+</style>
+<script>
+
+    $(window).scroll(function() {
+        yHandler();
+    });
+
+
+    function yHandler(){
+
+        var wrap = document.getElementById('wrap');
+        var contentHeight = wrap.offsetHeight;
+        var yOffset = window.pageYOffset;
+        var y = yOffset + window.innerHeight;
+        if(y >= contentHeight){
+            // Ajax call to get more dynamic data goes here
+
+
+            $.getJSON('/allTransaction_next/' + $("#transectionview tr:last>td:first").text(), function(data){
+                data.filter(function (data, i){
+                    var url = '/transectionview/'
+                    $("#transectionview").append("<tr class='clickable-row' ><td><a href="+url+data.id+" > " +  data.id + "</a></td> <td>" +data.bank + "</td> <td>" + data.promize_amount + "</td> <td>" + data.from_account + "</td><td>" + data.to_account + "</td><td>" + data.timestamp + "</td> </tr>");
+                });
+            })
+        }
+    }
+    //window.onscroll = yHandler;
+
+</script>
 
 <div class="page-data" id="datatable">
 
@@ -31,12 +65,13 @@
 
             </tr>
 
+            <tbody id="transectionview">
             <% if(data.length){
 
             for(var i = 0;i < data.length;i++) { %>
 
-            <tr  class='clickable-row' data-href='/transview/<%= data[i].id %>'>
-                <td><%= data[i].id %></td>
+            <tr  class='' >
+                <td><a  href='/transectionview/<%= data[i].id %>'><%= data[i].id %></a></td>
                 <td><%= data[i].bank %></td>
                 <td><%= data[i].promize_amount %></td>
                 <td><%= data[i].from_account %></td>
@@ -54,14 +89,17 @@
                 <td colspan="6">No data available</td>
             </tr>
             <% } %>
+            </tbody>
 
         </table>
-        <div align="right" style="padding-top: 2%;">
+      <!--  <div align="right" style="padding-top: 2%;">
             <% if(data.length){%>
             <a class="a-inside edit" href="/allTransaction_previous/<%=data[0].id%>">Previous</a><a class="a-inside edit" href='/allTransaction_next/<%=data[data.length-1].id%>'>Next</a>
             <%}%>
-        </div>
+        </div>-->
     </div>
+    <div id="status"></div>
+    <div id="wrap">
 </div>
 
 <%- include layouts/footer.ejs %>

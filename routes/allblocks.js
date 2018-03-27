@@ -31,7 +31,7 @@ client.connect(function (err, result) {
 exports.list = function (req, res) {
 
     console.log('allblocks: list');
-    client.execute('SELECT * FROM blocks LIMIT 2', [], function (err, result) {
+    client.execute('SELECT * FROM blocks LIMIT 10', [], function (err, result) {
         if (err) {
             console.log('allblocks: list err:', err);
             res.status(404).send({msg: err});
@@ -119,7 +119,7 @@ exports.list_search = function (req, res) {
 
 
 /*
- * GET cheques listing pagging next.
+ * GET cheques listing pagging next. run
  */
 exports.list_paging_next = function (req, res) {
 
@@ -127,13 +127,16 @@ exports.list_paging_next = function (req, res) {
     var id = req.params.id;
 
     console.log('id:  ' +id );
-    client.execute("SELECT * FROM blocks WHERE id > "+ id + "LIMIT 2 ALLOW FILTERING", [], function (err, result) {
+    client.execute("SELECT * FROM blocks WHERE id > "+ id + "LIMIT 10 ALLOW FILTERING", [], function (err, result) {
         if (err) {""
             console.log('allblocks: list err:', err);
             res.status(404).send({msg: err});
         } else {
             console.log('allblocks: list succ:', result.rows);
-            res.render('allblocks_next', {page_title: "All Blocks", data: result.rows})
+
+            res.status(200).send(result.rows);
+
+            //res.render('allblocks_next', {page_title: "All Blocks", data: result.rows})
 
         }
     });

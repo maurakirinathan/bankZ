@@ -107,7 +107,8 @@ exports.list_paging_next = function (req, res) {
             res.status(404).send({msg: err});
         } else {
             console.log('processing Transaction: list succ:', result.rows);
-            res.render('processingTransaction', {page_title: "Processing Transactions", data: result.rows})
+            res.status(200).send(result.rows);
+        //    res.render('processingTransaction', {page_title: "Processing Transactions", data: result.rows})
 
         }
     });

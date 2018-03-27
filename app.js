@@ -56,7 +56,7 @@ app.get('/allblocks_next/:id',allblocks.list_paging_next);
 app.get('/allpromizes',allpromizes.list);
 app.get('/alltransaction_promize',allpromizes.transactions_for_promize);
 //app.get('/allpromizes_previous/:id',allpromizes.list_paging_previous);
-//app.get('/allpromizes_next/:id',allcpromizes.list_paging_next);
+app.get('/allpromizes_next/:id',allpromizes.list_paging_next);
 app.get('/promizesview/:id',allpromizes.list_one);
 app.post('/allpromizes_search',allpromizes.list_search);
 
@@ -65,13 +65,13 @@ app.get('/processingTransaction',processingTransaction.list);
 app.get('/processingTransaction/:id',processingTransaction.list_one);
 app.post('/processingTransaction_search',processingTransaction.list_search);
 //app.get('/processingTransaction_previous/:id',pendingTransaction.list_paging_previous);
-//app.get('/processingTransaction_next/:id',pendingTransaction.list_paging_next);
+app.get('/processingTransaction_next/:id',processingTransaction.list_paging_next);
 
 
 //app.get('/alltrans',allTransactions.list_trans);
-app.get('/alltransaction',allTransactions.list_trans_display);
+app.get('/alltransaction',allTransactions.list_transection);
 app.post('/transection_search',allTransactions.list_search);
-app.get('/transview/:id',allTransactions.list_one);
+app.get('/transectionview/:id',allTransactions.list_one);
 app.get('/allTransaction_previous/:id',allTransactions.list_paging_previous);
 app.get('/allTransaction_next/:id',allTransactions.list_paging_next);
 

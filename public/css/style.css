@@ -1,6 +1,6 @@
 body {
   margin:0;
-  font: 16px "'Viga'", sans-serif;
+  font: 15px "'Viga'", sans-serif;
 
   background:#eee;
   width:100%;
@@ -24,11 +24,12 @@ a {
 }
 
 .page-container{padding:0px;
-
+    background-color: #FFFFFF;
 }
 .page-data{
     padding:10px;
     margin-left:0px;
+    background-color: #FFFFFF;
 }
 
 
@@ -306,6 +307,7 @@ body {margin:0}
 
 .clickable-row {
     cursor: pointer;
+
 }
 
 .rotate

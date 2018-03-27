@@ -26,24 +26,25 @@ client.connect(function (err, result) {
 /*
  * GET cheques listing pagging next.
  */
-/*exports.list_paging_next = function (req, res) {
+exports.list_paging_next = function (req, res) {
 
     console.log('allcheques: list');
     var id = req.params.id;
 
     console.log('id:  ' +id );
-    client.execute("SELECT * FROM cheques WHERE id > "+ id + "LIMIT 10 ALLOW FILTERING", [], function (err, result) {
+    client.execute("SELECT * FROM promizes WHERE id > "+ id + "LIMIT 10 ALLOW FILTERING", [], function (err, result) {
         if (err) {""
             console.log('allcheques: list err:', err);
             res.status(404).send({msg: err});
         } else {
             console.log('allcheques1: list succ:', result.rows);
-            res.render('allcheques', {page_title: "All Cheques", data: result.rows})
+            res.status(200).send(result.rows);
+           // res.render('allcheques', {page_title: "All Cheques", data: result.rows})
 
         }
     });
 
-};*/
+};
 
 /*
  * GET cheques listing pagging previous.

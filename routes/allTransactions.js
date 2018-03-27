@@ -53,7 +53,7 @@ exports.list_one = function (req, res) {
 /*
  * GET trans listing .
  */
-exports.list_trans_display = function (req, res) {
+exports.list_transection = function (req, res) {
 
     console.log('alltransaction: list');
     client.execute('SELECT * FROM transactions LIMIT 10', [], function (err, result) {
@@ -116,7 +116,8 @@ exports.list_paging_next = function (req, res) {
             res.status(404).send({msg: err});
         } else {
             console.log('alltransaction: list succ:', result.rows);
-            res.render('alltransaction', {page_title: "All Transactions", data: result.rows})
+            res.status(200).send(result.rows);
+           // res.render('alltransaction', {page_title: "All Transactions", data: result.rows})
 
         }
     });
