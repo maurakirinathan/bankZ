@@ -33,7 +33,17 @@
             </tr>
             <tr>
                 <td class="label" valign="top">Pre-Hash</td>
-                <td align="right"><%= data[0].pre_hash %></td>
+         <!--       <td align="right"><%= data[0].pre_hash %></td>  -->
+                <td align="right" class="tooltip"><div class="bover"><%= data[0].pre_hash %></div>
+                    <span class="tooltiptext">
+                        <div class="wordbrake">
+                        <%= data[0].pre_hash %>
+
+                        </div>
+                    </span>
+
+                </td>
+
             </tr>
             <tr>
                 <td class="label" valign="top">Signatures</td>

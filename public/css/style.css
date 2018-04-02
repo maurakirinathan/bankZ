@@ -1,6 +1,7 @@
 body {
   margin:0;
-  font: 15px "'Viga'", sans-serif;
+  font: 15px Ubuntu,sans-serif;
+    /*font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;*/
 
   background:#eee;
   width:100%;
@@ -73,7 +74,8 @@ a {
 .data-table table{
     border-collapse:collapse;
     border:0px solid #ddd;
-    width:100%}
+    width:100%;
+    }
 
 
 .data-table th {
@@ -122,7 +124,8 @@ a {
 .data-table-mini table{
     border-collapse:collapse;
     border:0px solid #ddd;
-    width:100%}
+    width:100%;
+    table-layout: fixed;}
 
 .data-table-mini tr {
     border: 0.5px ridge;
@@ -361,5 +364,65 @@ body {margin:0}
     background: #ffffff;
     border-radius: 25px;
     z-index:-1;
+
+}
+
+
+.tooltip {
+   position: relative;
+    display: inline-block;
+
+
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+/*  width: 100%;*/
+  /*  height: 100%;*/
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: -50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+
+}
+
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.wordbrake
+{
+    width: 70em;
+ /*   border: 1px solid #000000;*/
+    word-wrap: break-word;
+}
+
+.bover {
+    white-space: nowrap;
+    width: 676px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
 }
