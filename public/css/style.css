@@ -387,7 +387,7 @@ body {margin:0}
     position: absolute;
     z-index: 1;
     bottom: 125%;
-    left: -50%;
+    left: -20%;
     margin-left: -60px;
     opacity: 0;
     transition: opacity 0.3s;
@@ -398,7 +398,7 @@ body {margin:0}
     content: "";
     position: absolute;
     top: 100%;
-    left: 50%;
+    left: 20%;
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
@@ -421,8 +421,9 @@ body {margin:0}
 
 .bover {
     white-space: nowrap;
-    width: 676px;
+    width: 25%;
     overflow: hidden;
     text-overflow: ellipsis;
+    padding-right: 0px;
 
 }

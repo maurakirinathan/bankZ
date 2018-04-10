@@ -33,7 +33,20 @@
             <td class="label" valign="top">Cheque ID</td><td  align="right"><%=data[0].cheque_id%></td>
         </tr>-->
             <tr>
-                <td class="label" valign="top">Digital Sign</td><td  align="right"><%=data[0].digsig%></td>
+                <td class="label" valign="top">Digital Sign</td>
+
+                <td align="right" class="tooltip"><div class="bover"><%=data[0].digsig%></div>
+                    <span class="tooltiptext">
+                        <div class="wordbrake">
+                       <%=data[0].digsig%>
+
+                        </div>
+                    </span>
+
+                </td>
+
+
+               <!-- <td  align="right"><%=data[0].digsig%></td>-->
             </tr>
             <tr>
                 <td class="label" valign="top">From Account</td><td  align="right"><%=data[0].from_acc%></td>
