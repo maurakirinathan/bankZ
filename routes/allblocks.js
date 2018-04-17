@@ -23,12 +23,10 @@ client.connect(function (err, result) {
 });
 
 
-
-
 /*
  * GET blocks listing.
  */
-exports.list = function (req, res) {
+exports.list =  function (req, res) {
 
     console.log('allblocks: list');
     client.execute('SELECT * FROM blocks LIMIT 10', [], function (err, result) {

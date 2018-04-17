@@ -5,8 +5,10 @@
 
 var express = require('express');
 var routes = require('./routes');
+var session = require('express-session');
 var http = require('http');
 var path = require('path');
+
 
 //load cassandra route
 var cassandrainfo = require('./routes/cassandrainfo');
@@ -25,12 +27,23 @@ var allTransactions = require('./routes/allTransactions');
 
 var app = express();
 
+var index = require('./routes/index');
+
+
+app.use(session({
+    secret: '2C44-4D44-WppQ38S',
+    resave: true,
+    saveUninitialized: true
+}));
+
+
+
 var cassandra = require('cassandra-driver');
 
-const client = new cassandra.Client({contactPoints: ['localhost:9042'], keyspace: 'ks1' });
+const client = new cassandra.Client({contactPoints: ['localhost:9042'], keyspace: 'cchain' });
 
 // all environments
-app.set('port', process.env.PORT || 8081);
+app.set('port', process.env.PORT || 8082);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.logger('dev'));
@@ -40,9 +53,22 @@ app.use(express.methodOverride());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+// Authentication and Authorization Middleware
+var auth = function(req, res, next) {
+    if (req.session && req.session.user === "admin" && req.session.admin)
+        //
+        console.log("there : 200");
+    else
+        console.log("there is a prob : 401");
+   // return  res.sendStatus(401);
+
+};
+
+
 /*app.get('/', routes.index);*/
 //---------------------------------------
-app.get('/', allblocks.list);
+app.get('/',index.index);
 app.get('/allblocks',allblocks.list);
 app.get('/allblocks/:id',allblocks.list_one);
 app.post('/allblocks_search',allblocks.list_search);
@@ -78,14 +104,48 @@ app.get('/allTransaction_next/:id',allTransactions.list_paging_next);
 
 
 
+
+
+// Login endpoint
+app.get('/login', function (req, res) {
+    if (!req.query.username || !req.query.password) {
+        res.send('login failed');
+    } else if(req.query.username === "admin" || req.query.password === "admin") {
+     //   res.send("login success!");
+       req.session.user = "admin";
+       req.session.admin = true;
+       // res.render('index', { page_title: 'Hello Container World' });
+        //res.render('allblocks',auth,allpromizes.list);
+      //  res.send("login success!");
+        client.execute('SELECT * FROM blocks LIMIT 10', [], function (err, result) {
+            if (err) {
+                console.log('allblocks: list err:', err);
+                res.status(404).send({msg: err});
+            } else {
+                console.log('allblocks: list succ:', result.rows);
+                res.render('allblocks', {page_title: "All Blocks", data: result.rows})
+            }
+        });
+    }
+});
+
+// Logout endpoint
+app.get('/logout', function (req, res) {
+    req.session.destroy(auth(req,res));
+    //res.render('logout', { page_title: 'Hello Container World' });
+    res.render('index', { page_title: 'Hello Container World' });
+    //res.send("logout success!");
+});
+
+
 //app.get('/cassandrainfo', cassandrainfo.init_cassandra);
 
-//app.get('/', routes.index);
+app.get('/', routes.index);
 
 
 //----------------------------
 
-app.use(app.router);
+//app.use(app.router);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
