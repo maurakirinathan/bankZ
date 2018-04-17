@@ -9,6 +9,9 @@ var session = require('express-session');
 var http = require('http');
 var path = require('path');
 
+var cassandra = require('cassandra-driver');
+var PropertiesReader = require('properties-reader');
+
 
 //load cassandra route
 var cassandrainfo = require('./routes/cassandrainfo');
@@ -36,11 +39,25 @@ app.use(session({
     saveUninitialized: true
 }));
 
+/*var properties = PropertiesReader('PropertiesReader.js');
+var host =  properties.get('db.host');
+var port = properties.get('db.port');
+var keyspace = properties.get('db.keyspace');*/
 
 
-var cassandra = require('cassandra-driver');
+var host =  process.env.CASSANDRA_HOST;
+var port = process.env.CASSANDRA_PORT;
+var keyspace = process.env.CASSANDRA_KEYSPACE;
 
-const client = new cassandra.Client({contactPoints: ['localhost:9042'], keyspace: 'cchain' });
+
+var client = new cassandra.Client({contactPoints: [host+':'+port], keyspace: keyspace});
+client.connect(function (err, result) {
+    console.log('cchain: cassandra connected');
+});
+
+//var cassandra = require('cassandra-driver');
+
+//const client = new cassandra.Client({contactPoints: ['localhost:9042'], keyspace: 'cchain' });
 
 // all environments
 app.set('port', process.env.PORT || 8082);
@@ -110,7 +127,7 @@ app.get('/allTransaction_next/:id',allTransactions.list_paging_next);
 app.get('/login', function (req, res) {
     if (!req.query.username || !req.query.password) {
         res.send('login failed');
-    } else if(req.query.username === "admin" || req.query.password === "admin") {
+    } else if(req.query.username === "admin" && req.query.password === "admin") {
      //   res.send("login success!");
        req.session.user = "admin";
        req.session.admin = true;

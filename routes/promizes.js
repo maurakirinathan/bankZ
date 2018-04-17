@@ -2,10 +2,10 @@
 var cassandra = require('cassandra-driver');
 var PropertiesReader = require('properties-reader');
 
-/*var properties = PropertiesReader('PropertiesReader.js');
-var host =  properties.get('db.host');
-var port = properties.get('db.port');
-var keyspace = properties.get('db.keyspace');*/
+/* var properties = PropertiesReader('PropertiesReader.js');
+ var host =  properties.get('db.host');
+ var port = properties.get('db.port');
+ var keyspace = properties.get('db.keyspace');*/
 
  var host =  process.env.CASSANDRA_HOST;
  var port = process.env.CASSANDRA_PORT;
