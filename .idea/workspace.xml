@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c25b83a7-9eaa-4b84-9e4c-e6b4c8292705" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/npm-debug.log" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/cassandrainfo.js" afterPath="$PROJECT_DIR$/routes/cassandrainfo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/processingTransaction.js" afterPath="$PROJECT_DIR$/routes/processingTransaction.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/promizesViewOne.ejs" afterPath="$PROJECT_DIR$/views/promizesViewOne.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/transactionViewOne.ejs" afterPath="$PROJECT_DIR$/views/transactionViewOne.ejs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,11 +13,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
               <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="alltransaction.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/alltransaction.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="79" column="25" lean-forward="true" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -68,16 +73,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="processingTransaction.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/processingTransaction.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="72" column="32" lean-forward="false" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="processingTransaction.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/processingTransaction.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -88,10 +83,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="processingTransactionViewOne.ejs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="processingTransactionViewOne.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/processingTransactionViewOne.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-252">
+            <state relative-caret-position="-60">
               <caret line="31" column="100" lean-forward="false" selection-start-line="31" selection-start-column="89" selection-end-line="31" selection-end-column="100" />
               <folding />
             </state>
@@ -101,8 +96,8 @@
       <file leaf-file-name="transactionViewOne.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/transactionViewOne.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-414">
-              <caret line="4" column="77" lean-forward="false" selection-start-line="4" selection-start-column="77" selection-end-line="4" selection-end-column="77" />
+            <state relative-caret-position="696">
+              <caret line="60" column="100" lean-forward="false" selection-start-line="60" selection-start-column="100" selection-end-line="60" selection-end-column="100" />
               <folding />
             </state>
           </provider>
@@ -111,7 +106,7 @@
       <file leaf-file-name="promizesViewOne.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/promizesViewOne.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
+            <state relative-caret-position="336">
               <caret line="29" column="20" lean-forward="true" selection-start-line="27" selection-start-column="12" selection-end-line="29" selection-end-column="20" />
               <folding />
             </state>
@@ -198,7 +193,6 @@
         <option value="$PROJECT_DIR$/views/index.ejs" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/views/blockViewOne.ejs" />
-        <option value="$PROJECT_DIR$/views/transactionViewOne.ejs" />
         <option value="$PROJECT_DIR$/views/allblocks.ejs" />
         <option value="$PROJECT_DIR$/views/allpromizes.ejs" />
         <option value="$PROJECT_DIR$/views/alltransaction.ejs" />
@@ -211,6 +205,7 @@
         <option value="$PROJECT_DIR$/routes/processingTransaction.js" />
         <option value="$PROJECT_DIR$/routes/promizes.js" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/views/transactionViewOne.ejs" />
       </list>
     </option>
   </component>
@@ -500,12 +495,12 @@
       <workItem from="1523458513170" duration="594000" />
       <workItem from="1523973310871" duration="3122000" />
       <workItem from="1523983891770" duration="1363000" />
-      <workItem from="1524018700951" duration="3929000" />
+      <workItem from="1524018700951" duration="4590000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="251670000" />
+    <option name="totallyTimeSpent" value="252331000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="25" width="1871" height="1055" extended-state="6" />
@@ -520,7 +515,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2858732" sideWeight="0.49807587" order="10" side_tool="false" content_ui="tabs" x="55" y="610" width="1865" height="386" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18798666" sideWeight="0.49807587" order="10" side_tool="false" content_ui="tabs" x="55" y="610" width="1865" height="386" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18027398" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
@@ -836,42 +831,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/alltransaction.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="79" column="25" lean-forward="true" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/processingTransaction.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
           <caret line="72" column="32" lean-forward="false" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/processingTransactionViewOne.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-252">
-          <caret line="31" column="100" lean-forward="false" selection-start-line="31" selection-start-column="89" selection-end-line="31" selection-end-column="100" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/promizesViewOne.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="29" column="20" lean-forward="true" selection-start-line="27" selection-start-column="12" selection-end-line="29" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/transactionViewOne.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-414">
-          <caret line="4" column="77" lean-forward="false" selection-start-line="4" selection-start-column="77" selection-end-line="4" selection-end-column="77" />
           <folding />
         </state>
       </provider>
@@ -892,10 +855,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/cassandrainfo.js">
+    <entry file="file://$PROJECT_DIR$/routes/promizes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="12" selection-end-column="47" />
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="11" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -908,10 +871,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/promizes.js">
+    <entry file="file://$PROJECT_DIR$/routes/cassandrainfo.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="11" selection-end-column="46" />
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="12" selection-end-column="47" />
           <folding />
         </state>
       </provider>
@@ -920,6 +883,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/alltransaction.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="79" column="25" lean-forward="true" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/transactionViewOne.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="60" column="100" lean-forward="false" selection-start-line="60" selection-start-column="100" selection-end-line="60" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/promizesViewOne.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="29" column="20" lean-forward="true" selection-start-line="27" selection-start-column="12" selection-end-line="29" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/processingTransactionViewOne.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-60">
+          <caret line="31" column="100" lean-forward="false" selection-start-line="31" selection-start-column="89" selection-end-line="31" selection-end-column="100" />
           <folding />
         </state>
       </provider>
