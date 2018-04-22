@@ -2,13 +2,13 @@
 
 <div id="mySidenav" class="sidenav" style="width: 16%;" >
     <img  src="../images/bank-logo-light.png" style="padding-left:10%;padding-bottom: 5%;padding-top:10%;" >
-    <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
-    <a  class=" navBar" href="/allblocks" style="padding-left:10%;" onclick="" ><i class="fa fa-home"></i>    All Blocks</a>
-    <a  class="navBar" href="/processingTransaction"  style="padding-left:10%;"><i class="fa fa-upload"></i>  Processing Transaction</a>
-    <a  class="active" href="/allpromizes" style="padding-left:10%;"  onclick=""><i class="fa fa-money"></i>   All Promizes</a>
-    <a  class="navBar" href="/alltransaction" style="padding-left:10%;"><i class="fa fa-window-restore"></i>  All Transaction</a>
-    <a  class="navBar" href="/logout" style="padding-left:10%;"><i class="fa fa-window-restore"></i>  Logout</a>
+    <a  class="navBar" href="/allblocks" style="padding-left:10%;">Blocks</a>
+    <a  class="navBar" href="/processingTransaction"  style="padding-left:10%;">  Processing Transaction</a>
+    <a  class="navBar" href="/alltransaction" style="padding-left:10%;">  All Transaction</a>
+    <a  class="active" href="/allpromizes" style="padding-left:10%;" > iGifts</a>
+    <a  class="navBar" href="/logout" style="padding-left:10%;">  Logout</a>
 </div>
+
 <style>
     div#status{position:fixed; font-size:24px;}
     div#wrap{width:800px; margin:0px auto;}
@@ -51,7 +51,7 @@
 
         <div style="padding-left:20%;padding-bottom: 3%;padding-top: 2%;width: 100%;">
             <form method="post" action="/allpromizes_search">
-                <input type="text" placeholder="    Search by Promize ID.." name="id" style="width: 71%; border-radius: 25px;">
+                <input type="text" placeholder="    Search by iGift ID.." name="id" style="width: 71%; border-radius: 25px;">
                 <button type="submit" class="a-inside edit" style=" border-radius: 25px;">Search</button>
             </form>
         </div>
@@ -59,10 +59,10 @@
         <table  cellpadding="7" cellspacing="7">
          <!--   <lable ><b> Cheque List</b></lable>-->
             <tr>
-                <th>Promize ID</th>
+                <th>iGift ID</th>
                 <th>Bank</th>
  <!--               <th>Date</th>-->
-                <th>Promize Amount</th>
+                <th>Amount</th>
 
 
 

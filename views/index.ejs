@@ -5,42 +5,61 @@
 <!doctype html>
 <html>
 <head>
-
+    <link href="/../css/style.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+    <link rel="manifest" href="./images/site.webmanifest">
+    <link rel="mask-icon" href="./images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+<!--
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-    <!-- load bootstrap css -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    &lt;!&ndash; load bootstrap css &ndash;&gt;
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">-->
     <!-- load fontawesome -->
     <style>
-        body {
-            padding-top: 80px;
-        }
     </style>
 </head>
-<body>
-<div class="container">
+<body  bgcolor="#09345f">
+<!--<div class="container">-->
 
-    <div class="col-sm-6 col-sm-offset-3">
+    <!--<div class="">-->
 
-        <h1><span class="fa fa-sign-in"></span> Login</h1>
+        <!--<h1>    <img  src="../images/bank-logo-light.png"  ></span> Login</h1>-->
 
-        <!-- show any messages that come back with authentication -->
+        <!--&lt;!&ndash; show any messages that come back with authentication &ndash;&gt;-->
 
 
-        <!-- LOGIN FORM -->
-        <form action="/login" method="get">
-            <div class="form-group">
-                <label>Username</label>
-                <input type="text" class="form-control" name="username">
-            </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control" name="password">
-            </div>
+        <!--&lt;!&ndash; LOGIN FORM &ndash;&gt;-->
+        <!--<form action="/login" method="get">-->
+            <!--<div class="form-group">-->
+                <!--<label >Username</label>-->
+                <!--<input type="text" class="form-control" name="username">-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label>Password</label>-->
+                <!--<input type="password" class="form-control" name="password">-->
+            <!--</div>-->
 
-            <button type="submit" class="btn btn-warning btn-lg">Login</button>
-        </form>
-        <hr>
+            <!--<button type="submit" class="btn btn-warning btn-lg">Login</button>-->
+        <!--</form>-->
+
+    <!--</div>-->
+<!--</div>-->
+<div class="app-container">
+    <form action="/login" method="get">
+    <div class="form-group">
+    <label >Username</label>
+    <input type="text" class="form-control" name="username">
     </div>
+    <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" name="password">
+    </div>
+
+    <button type="submit" class="btn btn-warning btn-lg">Login</button>
+    </form>
 </div>
 </body>
 </html>

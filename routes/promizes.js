@@ -77,6 +77,7 @@ exports.list_one = function (req, res) {
             res.status(404).send({msg: err});
         } else {
             console.log('promizes: viewing one succ:');
+            transactions_for_promize();
             res.render('promizesViewOne', {page_title: "Promizes Details", data: result.rows});
         }
     });
@@ -119,6 +120,21 @@ exports.list_search = function (req, res) {
 
 exports.transactions_for_promize = function (req, res) {
 
+    var id = req.params.id;
+    client.execute("select * from transactions where promize_id=" +id+ " ALLOW FILTERING", [], function (err, result) {
+        if (err) {
+            console.log('alltransaction_promize: list err:', err);
+            res.status(404).send({msg: err});
+        } else {
+            console.log('alltransaction_promize: list succ:', result.rows);
+            res.render('alltransaction_promize', {page_title: "All Transactions", data: result.rows})
+        }
+    });
+
+};
+
+/*exports.transactions_for_promize = function (req, res) {
+
     console.log('alltrans: list');
     client.execute('SELECT * FROM transactions  LIMIT 10', [], function (err, result) {
         if (err) {
@@ -130,6 +146,6 @@ exports.transactions_for_promize = function (req, res) {
         }
     });
 
-};
+};*/
 
 //SELECT * FROM cheques where token(bank_id) > token('test4') LIMIT  2;

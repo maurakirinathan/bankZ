@@ -101,7 +101,7 @@ app.get('/allblocks_next/:id',auth,allblocks.list_paging_next);
 
 
 app.get('/allpromizes',auth,allpromizes.list);
-app.get('/alltransaction_promize',auth,allpromizes.transactions_for_promize);
+app.get('/alltransaction_promize/:id',auth,allpromizes.transactions_for_promize);
 //app.get('/allpromizes_previous/:id',allpromizes.list_paging_previous);
 app.get('/allpromizes_next/:id',auth,allpromizes.list_paging_next);
 app.get('/promizesview/:id',auth,allpromizes.list_one);
