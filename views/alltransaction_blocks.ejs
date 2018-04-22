@@ -32,9 +32,6 @@
                 <td><%= data[i].from_account %></td>
                 <td><%= data[i].to_account %></td>
                 <td><%= data[i].timestamp %></td>
-                <!-- <td>
-                    <a class="a-inside edit" href="/pendingTransaction/<%=data[i].id%>">View</a>
-                </td>-->
 
             </tr>
             <% }
@@ -46,10 +43,6 @@
             <% } %>
 
         </table>
-<!--        <div align="right" style="padding-top: 2%;">
-            <% if(data.length){%>
-            <a class="a-inside edit" href="/allcheques_previous/<%=data[0].id%>">Previous</a><a class="a-inside edit" href='/allcheques_next/<%=data[data.length-1].id%>'>Next</a>
-            <%}%>
-        </div>-->
+
     </div>
 </div>
