@@ -29,27 +29,6 @@
         <tr>
             <td class="label" valign="top">Promize Bank</td><td  align="right"><%=data[0].promize_bank%></td>
         </tr>
-    <!--    <tr>
-            <td class="label" valign="top">Cheque Date</td><td  align="right"><%=data[0].cheque_date%></td>
-        </tr>
-        <tr>
-            <td class="label" valign="top">Cheque ID</td><td  align="right"><%=data[0].cheque_id%></td>
-        </tr>-->
-        <tr>
-            <td class="label" valign="top">Digital Sign</td>
-
-            <td align="right" class="tooltip"><div class="bover"><%=data[0].digsig%></div>
-                <span class="tooltiptext">
-                        <div class="wordbrake">
-                       <%=data[0].digsig%>
-
-                        </div>
-                    </span>
-
-            </td>
-
-       <!--     <td  align="right"><%=data[0].digsig%></td>-->
-        </tr>
         <tr>
             <td class="label" valign="top">From Account</td><td  align="right"><%=data[0].from_account%></td>
         </tr>
@@ -62,8 +41,12 @@
         <tr>
             <td class="label" valign="top">Timestamp</td><td  align="right"><%=data[0].timestamp%></td>
         </tr>
-
-
+        <tr>
+            <td class="label" valign="top">Type</td><td  align="right"><%=data[0].from_zaddress%></td>
+        </tr>
+        <tr>
+            <td class="label" valign="top">Timestamp</td><td  align="right"><%=data[0].to_zaddress%></td>
+        </tr>
 
     </table>
 
