@@ -3,8 +3,8 @@
 <div id="mySidenav" class="sidenav" style="width: 16%;" >
     <img  src="../images/bank-logo-light.png" style="padding-left:10%;padding-bottom: 5%;padding-top:10%;" >
     <a  class="navBar" href="/allblocks" style="padding-left:10%;">Blocks</a>
-    <a  class="navBar" href="/processingTransaction"  style="padding-left:10%;">  Processing Transaction</a>
-    <a  class="navBar" href="/alltransaction" style="padding-left:10%;">  All Transaction</a>
+    <a  class="navBar" href="/processingTransaction"  style="padding-left:10%;">  Processing Transactions</a>
+    <a  class="navBar" href="/alltransaction" style="padding-left:10%;">  All Transactions</a>
     <a  class="active" href="/allpromizes" style="padding-left:10%;" > iGifts</a>
     <a  class="navBar" href="/logout" style="padding-left:10%;">  Logout</a>
 </div>
@@ -12,7 +12,7 @@
 <div class="page-data" id="datatable">
 
 <div id="wrapper4" class="data-table-mini" style="padding-top:2%">
-    <label  style="font-size: 24px;padding-top:15%;padding-bottom:4%;"><b>Promize ID # <%=data[0].id%></b></label>
+    <label  style="font-size: 24px;padding-top:15%;padding-bottom:4%;"><b>iGift ID # <%=data[0].id%></b></label>
     <div style="font-size: 24px;padding-top:2%;padding-bottom:1%;">
         <label  ><b>Info</b></label></div>
         <table cellpadding="11">
@@ -32,7 +32,7 @@
                 <td class="label" valign="top">Zaddress</td><td align="right"><%=data[0].origin_zaddress%></td>
             </tr>
             <tr>
-                <td></td><td align="right"> <a class="a-inside edit" href="/alltransaction_promize/<%=data[0].id%>">View All Promize Transaction </a></td>
+                <td class="label" valign="top">Transactions</td><td align="right"> <a  href="/alltransaction_promize/<%=data[0].id%>">View</a></td>
             </tr>
 
          </table>

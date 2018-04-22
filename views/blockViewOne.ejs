@@ -2,8 +2,8 @@
 <div id="mySidenav" class="sidenav" style="width: 16%;" >
     <img  src="../images/bank-logo-light.png" style="padding-left:10%;padding-bottom: 5%;padding-top:10%;" >
     <a  class="active" href="/allblocks" style="padding-left:10%;">Blocks</a>
-    <a  class="navBar" href="/processingTransaction"  style="padding-left:10%;">  Processing Transaction</a>
-    <a  class="navBar" href="/alltransaction" style="padding-left:10%;">  All Transaction</a>
+    <a  class="navBar" href="/processingTransaction"  style="padding-left:10%;">  Processing Transactions</a>
+    <a  class="navBar" href="/alltransaction" style="padding-left:10%;">  All Transactions</a>
     <a  class="navBar" href="/allpromizes" style="padding-left:10%;" > iGifts</a>
     <a  class="navBar" href="/logout" style="padding-left:10%;">  Logout</a>
 </div>
@@ -30,24 +30,6 @@
                 <td class="label" valign="top">Merkle Root</td>
                 <td align="right"><%= data[0].merkle_root %></td>
             </tr>
-<!--            <tr>
-                <td class="label" valign="top">Pre-Hash</td>
-         &lt;!&ndash;       <td align="right"><%= data[0].pre_hash %></td>  &ndash;&gt;
-                <td align="right" class="tooltip"><div class="bover"><%= data[0].pre_hash %></div>
-                    <span class="tooltiptext">
-                        <div class="wordbrake">
-                        <%= data[0].pre_hash %>
-
-                        </div>
-                    </span>
-
-                </td>
-
-            </tr>-->
-            <tr>
-                <td class="label" valign="top">Signatures</td>
-                <td align="right"><%= data[0].signatures %></td>
-            </tr>
             <tr>
                 <td class="label" valign="top">Timestamp</td>
                 <td align="right"><%= data[0].timestamp %></td>
@@ -62,7 +44,7 @@
             <tr>
                 <th>Transaction ID</th>
                 <th>Bank</th>
-                <th>Promize Amount</th>
+                <th>Amount</th>
                 <th>From Acc</th>
                 <th>To Acc</th>
                 <th>Timestamp</th>
@@ -75,11 +57,11 @@
 
             <tr>
                 <td><%= data[0].transactions[i].id %></td>
-                <td><%= data[0].transactions.bank %></td>
-                <td><%= data[0].transactions.promize_amount %></td>
-                <td><%= data[0].transactions.from_account %></td>
-                <td><%= data[0].transactions.to_account %></td>
-                <td><%= data[0].transactions.timestamp %></td>
+                <td><%= data[0].transactions[i].bank %></td>
+                <td><%= data[0].transactions[i].promize_amount %></td>
+                <td><%= data[0].transactions[i].from_account %></td>
+                <td><%= data[0].transactions[i].to_account %></td>
+                <td><%= data[0].transactions[i].timestamp %></td>
 
 
             </tr>
