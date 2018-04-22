@@ -30,9 +30,9 @@
                 <td class="label" valign="top">Merkle Root</td>
                 <td align="right"><%= data[0].merkle_root %></td>
             </tr>
-            <tr>
+<!--            <tr>
                 <td class="label" valign="top">Pre-Hash</td>
-         <!--       <td align="right"><%= data[0].pre_hash %></td>  -->
+         &lt;!&ndash;       <td align="right"><%= data[0].pre_hash %></td>  &ndash;&gt;
                 <td align="right" class="tooltip"><div class="bover"><%= data[0].pre_hash %></div>
                     <span class="tooltiptext">
                         <div class="wordbrake">
@@ -43,7 +43,7 @@
 
                 </td>
 
-            </tr>
+            </tr>-->
             <tr>
                 <td class="label" valign="top">Signatures</td>
                 <td align="right"><%= data[0].signatures %></td>
@@ -80,9 +80,7 @@
                 <td><%= data[0].transactions.from_account %></td>
                 <td><%= data[0].transactions.to_account %></td>
                 <td><%= data[0].transactions.timestamp %></td>
-                <!-- <td>
-                    <a class="a-inside edit" href="/pendingTransaction/<%= data[i].id %>">View</a>
-                </td>-->
+
 
             </tr>
             <% }
@@ -94,12 +92,7 @@
             <% } %>
 
         </table>
-    <!--    <div align="right" style="padding-top: 2%;">
-            <% if(data.length){ %>
-            <a class="a-inside edit" href="/allTransaction_previous/<%= data[0].id %>">Previous</a><a
-                    class="a-inside edit" href='/allTransaction_next/<%= data[data.length - 1].id %>'>Next</a>
-            <% } %>
-        </div>-->
+
     </div>
 
 </div>

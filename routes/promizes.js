@@ -77,7 +77,6 @@ exports.list_one = function (req, res) {
             res.status(404).send({msg: err});
         } else {
             console.log('promizes: viewing one succ:');
-            transactions_for_promize();
             res.render('promizesViewOne', {page_title: "Promizes Details", data: result.rows});
         }
     });

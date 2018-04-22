@@ -126,6 +126,7 @@ app.get('/allTransaction_next/:id',auth,allTransactions.list_paging_next);
 app.get('/login', function (req, res) {
     if (!req.query.username || !req.query.password) {
         res.send('login failed');
+
     } else if(req.query.username === "admin" && req.query.password === "admin") {
        req.session.user = "admin";
        req.session.admin = true;
