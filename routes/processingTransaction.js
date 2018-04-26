@@ -6,7 +6,7 @@ const  client = require("./cassandrainfo")
 exports.list = function (req, res) {
 
     console.log('allblocks: list');
-    client.execute('SELECT * FROM trans LIMIT 10', [], function (err, result) {
+    client.execute('SELECT id,bank,promize_amount,from_account,to_account,timestamp FROM trans LIMIT 10', [], function (err, result) {
         if (err) {
             console.log('pending trans: list err:', err);
             res.status(404).send({msg: err});
@@ -26,7 +26,7 @@ exports.list_one = function (req, res) {
     var id = req.params.id;
     console.log('trans: viewing one');
 
-    client.execute("SELECT * from trans WHERE id = " + id + " ALLOW FILTERING", [], function (err, result) {
+    client.execute("SELECT id,bank,promize_amount,promize_bank,from_account,to_account,type,from_zaddress,to_zaddress,timestamp from trans WHERE id = " + id + " ALLOW FILTERING", [], function (err, result) {
         if (err) {
             console.log('trans: viewing one err:', err);
             res.status(404).send({msg: err});
@@ -50,7 +50,7 @@ exports.list_search = function (req, res) {
     console.log(input);
     console.log('pending trans: list_search');
     if (validate(input.id)) {
-        client.execute("SELECT * from trans WHERE id = " + input.id + " ALLOW FILTERING", [], function (err, result) {
+        client.execute("SELECT id,bank,promize_amount,from_account,to_account,timestamp from trans WHERE id = " + input.id + " ALLOW FILTERING", [], function (err, result) {
             if (err) {
                 console.log('pending trans: search one err:', err);
                 res.status(404).send({msg: err});
@@ -79,7 +79,7 @@ exports.list_paging_next = function (req, res) {
     var id = req.params.id;
 
     console.log('id:  ' +id );
-    client.execute("SELECT * FROM trans WHERE id > "+ id + "LIMIT 10 ALLOW FILTERING", [], function (err, result) {
+    client.execute("SELECT id,bank,promize_amount,from_account,to_account,timestamp FROM trans WHERE id > "+ id + "LIMIT 10 ALLOW FILTERING", [], function (err, result) {
         if (err) {""
             console.log('pendingTransaction: list err:', err);
             res.status(404).send({msg: err});
@@ -101,7 +101,7 @@ exports.list_paging_previous = function (req, res) {
     console.log('pendingTransaction: list');
     var id = req.params.id;
     console.log('id:', id);
-    client.execute("SELECT * FROM trans WHERE expr(trans_lucene_index," +"\'{ sort: [ {type: \"simple\", field: \"id\", reverse: true} ] }"+"\') AND bank='sampath' AND id <"+ id + " LIMIT 10 ALLOW FILTERING", [], function (err, result) {
+    client.execute("SELECT id,bank,promize_amount,from_account,to_account,timestamp FROM trans WHERE expr(trans_lucene_index," +"\'{ sort: [ {type: \"simple\", field: \"id\", reverse: true} ] }"+"\') AND bank='sampath' AND id <"+ id + " LIMIT 10 ALLOW FILTERING", [], function (err, result) {
         if (err) {""
             console.log('pendingTransaction: list err:', err);
             res.status(404).send({msg: err});

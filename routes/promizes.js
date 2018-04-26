@@ -52,7 +52,7 @@ exports.list_paging_next = function (req, res) {
 exports.list = function (req, res) {
 
     console.log('allcheques: list');
-    client.execute('SELECT * FROM promizes LIMIT 10', [], function (err, result) {
+    client.execute('SELECT id,bank,amount FROM promizes LIMIT 10', [], function (err, result) {
         if (err) {
             console.log('allpromizes: list err:', err);
             res.status(404).send({msg: err});
@@ -71,7 +71,7 @@ exports.list_one = function (req, res) {
     var id = req.params.id;
     console.log('promizes: viewing one');
 
-    client.execute("SELECT * from promizes WHERE id = " + id + " ALLOW FILTERING", [], function (err, result) {
+    client.execute("SELECT id,bank,amount,origin_zaddress from promizes WHERE id = " + id + " ALLOW FILTERING", [], function (err, result) {
         if (err) {
             console.log('promizes: viewing one err:', err);
             res.status(404).send({msg: err});
@@ -98,7 +98,7 @@ exports.list_search = function (req, res) {
     console.log(input);
     console.log('promizes: list_search');
     if (validate(input.id)) {
-        client.execute("SELECT * from promizes WHERE id = " + input.id + " ALLOW FILTERING", [], function (err, result) {
+        client.execute("SELECT id,bank,amount from promizes WHERE id = " + input.id + " ALLOW FILTERING", [], function (err, result) {
             if (err) {
                 console.log('promizes: search one err:', err);
                 res.status(404).send({msg: err});
@@ -120,7 +120,7 @@ exports.list_search = function (req, res) {
 exports.transactions_for_promize = function (req, res) {
 
     var id = req.params.id;
-    client.execute("select * from transactions where promize_id=" +id+ " ALLOW FILTERING", [], function (err, result) {
+    client.execute("select id,bank,promize_amount,from_account,to_account,timestamp from transactions where promize_id=" +id+ " ALLOW FILTERING", [], function (err, result) {
         if (err) {
             console.log('alltransaction_promize: list err:', err);
             res.status(404).send({msg: err});
