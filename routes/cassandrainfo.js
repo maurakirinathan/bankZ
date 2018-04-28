@@ -1,27 +1,26 @@
-
 var cassandra = require('cassandra-driver');
 var PropertiesReader = require('properties-reader');
 
-/*var properties = PropertiesReader('PropertiesReader.js');
- var host =  properties.get('db.host');
- var port = properties.get('db.port');
- var keyspace = properties.get('db.keyspace');*/
+var properties = PropertiesReader('PropertiesReader.js');
+var host = properties.get('db.host');
+var port = properties.get('db.port');
+var keyspace = properties.get('db.keyspace');
 
- var host =  process.env.CASSANDRA_HOST;
- var port = process.env.CASSANDRA_PORT;
- var keyspace = process.env.CASSANDRA_KEYSPACE;
+/*var host = process.env.CASSANDRA_HOST;
+var port = process.env.CASSANDRA_PORT;
+var keyspace = process.env.CASSANDRA_KEYSPACE;*/
 
 
 /*
 console.log('host: ' +host);
 console.log('port: ' +port);*/
 
-var client = new cassandra.Client({contactPoints: [host+':'+port], keyspace: keyspace});
+var client = new cassandra.Client({contactPoints: [host + ':' + port], keyspace: keyspace});
 client.connect(function (err, result) {
     console.log('cchain: cassandra connected');
 });
 
-module.exports= client;
+module.exports = client;
 
 /*
  * GET home page.

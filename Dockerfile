@@ -24,5 +24,6 @@ RUN npm install env-docker --save-dev
 # Bundle app source
 COPY . .
 
+
 EXPOSE 8081
 CMD [ "npm", "start" ]
