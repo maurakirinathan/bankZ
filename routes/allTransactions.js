@@ -80,7 +80,7 @@ exports.list_paging_next = function (req, res) {
     var id = req.params.id;
 
     console.log('id:  ' +id );
-    client.execute("SELECT id,bank,promize_amount,from_account,to_account,timestamp FROM transactions WHERE id > "+ id + "LIMIT 10 ALLOW FILTERING", [], function (err, result) {
+    client.execute("SELECT id,bank,promize_amount,from_account,to_account,timestamp FROM transactions WHERE id < "+ id + "LIMIT 10 ALLOW FILTERING", [], function (err, result) {
         if (err) {""
             console.log('alltransaction: list err:', err);
             res.status(404).send({msg: err});

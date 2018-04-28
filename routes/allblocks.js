@@ -101,7 +101,7 @@ exports.list_paging_next = function (req, res) {
     var id = req.params.id;
 
     console.log('id:  ' +id );
-    client.execute("SELECT id,timestamp,transactions,miner FROM blocks WHERE id > "+ id + "LIMIT 10 ALLOW FILTERING", [], function (err, result) {
+    client.execute("SELECT id,timestamp,transactions,miner FROM blocks WHERE id < "+ id + "LIMIT 10 ALLOW FILTERING", [], function (err, result) {
         if (err) {""
             console.log('allblocks: list err:', err);
             res.status(404).send({msg: err});
