@@ -4,11 +4,11 @@
 
 <div id="mySidenav" class="sidenav" style="width: 16%;" >
     <img  src="../images/bank-logo-light.png" style="padding-left:10%;padding-bottom: 5%;padding-top:10%;" >
-    <a  class="active" href="/allblocks" style="padding-left:10%;">Blocks</a>
+    <a  class="navBar" href="/allblocks" style="padding-left:10%;">Blocks</a>
     <a  class="navBar" href="/processingTransaction"  style="padding-left:10%;">  Processing Transactions</a>
     <a  class="navBar" href="/alltransaction" style="padding-left:10%;">  All Transactions</a>
     <a  class="navBar" href="/allpromizes" style="padding-left:10%;" > iGifts</a>
-    <a  class="navBar" href="/users" style="padding-left:10%;" > Users</a>
+    <a  class="active" href="/users" style="padding-left:10%;" > Users</a>
     <a  class="navBar" href="/logout" style="padding-left:10%;">  Logout</a>
 </div>
 <style>
@@ -34,10 +34,10 @@
             // Ajax call to get more dynamic data goes here
 
 
-         $.getJSON('/allblocks_next/' + $("#blockrows tr:last>td:first").text(), function(data){
+         $.getJSON('/users_next/' + $("#usersrows tr:last>td:first").text(), function(data){
              data.filter(function (data, i){
-                   var url = '/allblocks/'
-                 $("#blockrows").append("<tr class='clickable-row' data-href='"+url+data.id+"' ><td><a href="+url+data.id+" > " +  data.id + "</a></td> <td>" + data.timestamp + "</td> <td>" + data.transactions.length + "</td> <td>" + data.miner + "</td> </tr>");
+                   var url = '/users_one/'
+                 $("#usersrows").append("<tr class='clickable-row' data-href='"+url+data.zaddress+"' ><td><a href="+url+data.zaddress+" > " +  data.zaddress + "</a></td> <td>" + data.bank + "</td> <td>" + data.account + "</td> " + "<td>" + data.verified + "</td> <td>" + data.active + "</td> </tr>");
              });
          })
         }
@@ -50,8 +50,8 @@
 
 
     <div style="padding-left:20%;padding-bottom: 3%;padding-top: 2%;width: 100%;">
-        <form method="post" action="/allblocks_search">
-        <input type="text" placeholder="    Search by Block ID.." name="id" style="width: 71%; border-radius: 25px;">
+        <form method="post" action="/users_search">
+        <input type="text" placeholder="    Search by User zaddress.." name="id" style="width: 71%; border-radius: 25px;">
        <button type="submit" class="a-inside edit" style=" border-radius: 25px;">Search</button>
         </form>
     </div>
@@ -61,24 +61,25 @@
            <!-- <lable ><b> Block List</b></lable>-->
 
             <tr >
-                <th>Block ID</th>
-                <th>Timestamp</th>
-                <th>Transaction Count</th>
-                <th>Mined by</th>
+                <th>zaddress</th>
+                <th>bank</th>
+                <th>account</th>
+                <th>verified</th>
+                <th>active</th>
             </tr>
 
-                 <tbody id="blockrows">
+                 <tbody id="usersrows">
             <% if(data.length){
 
             for(var i = 0;i < data.length;i++) { %>
 
             <tr class=''>
-                <td><a href='/allblocks/<%= data[i].id %>'><%=data[i].id%></a></td>
-                <td><%= data[i].timestamp %></td>
-                <td><%= data[i].transactions.length %></td>
-                <td><%= data[i].miner %></td>
+                <td><a href='/users_one/<%= data[i].zaddress %>'><%=data[i].zaddress%></a></td>
+                <td><%= data[i].bank %></td>
+                <td><%= data[i].account %></td>
+                <td><%= data[i].verified %></td>
+                <td><%= data[i].active %></td>
             </tr>
-
 
             <% }
 
@@ -90,11 +91,7 @@
                  </tbody>
 
         </table>
-    <!--    <div align="right" style="padding-top: 2%;">
-            <% if(data.length){%>
-            <a class="a-inside edit" href="/allblocks_previous/<%=data[0].id%>">Previous</a><a class="a-inside edit" href='/allblocks_next/<%=data[data.length-1].id%>'>Next</a>
-                     <%}%>
-        </div>-->
+
     </div>
     <div id="status"></div>
     <div id="wrap">

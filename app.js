@@ -28,6 +28,9 @@ var allpromizes = require('./routes/promizes');
 //load all trans
 var allTransactions = require('./routes/allTransactions');
 
+//load users
+var users = require('./routes/users');
+
 var app = express();
 
 var index = require('./routes/index');
@@ -121,6 +124,14 @@ app.post('/transection_search',auth,allTransactions.list_search);
 app.get('/transectionview/:id',auth,allTransactions.list_one);
 app.get('/allTransaction_previous/:id',auth,allTransactions.list_paging_previous);
 app.get('/allTransaction_next/:id',auth,allTransactions.list_paging_next);
+
+
+app.get('/users',auth,users.list);
+app.get('/users_one/:id',auth,users.list_one);
+app.post('/users_search',auth,users.list_search);
+app.get('/users_next/:id',auth,users.list_paging_next);
+app.get('/user_inactive/:id',auth,users.user_inactive);
+app.get('/user_active/:id',auth,users.user_active);
 
 // Login endpoint
 app.get('/login', function (req, res) {
