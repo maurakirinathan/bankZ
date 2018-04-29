@@ -16,6 +16,7 @@ COPY package*.json ./
 
 RUN npm install
 RUN npm install cassandra-driver
+RUN npm install moment
 RUN npm install env-docker --save-dev
 
 # If you are building your code for production

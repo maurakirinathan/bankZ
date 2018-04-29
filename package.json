@@ -9,11 +9,12 @@
     "axios": "^0.18.0",
     "cassandra-driver": "*",
     "ejs": "^1.0.0",
-    "express": "*",
+    "express": "^3.21.2",
     "express-myconnection": "*",
+    "express-session": "*",
     "jade": "*",
-    "properties-reader": "*",
-    "express-session":"*"
+    "moment": "^2.22.1",
+    "properties-reader": "*"
   },
   "devDependencies": {
     "env-docker": "^1.0.1"
