@@ -1,4 +1,18 @@
-const  client = require("./cassandrainfo")
+const client = require("./cassandrainfo")
+
+
+var PropertiesReader = require('properties-reader');
+var elasticsearch = require('elasticsearch');
+
+var properties = PropertiesReader('PropertiesReader.js');
+var host = properties.get('db.host');
+var elasassandra_port = properties.get('db.elasassandra');
+
+
+var client_elasticsearch = new elasticsearch.Client({
+    host: host + ':' + elasassandra_port,
+});
+
 
 /*
  * GET cheques listing pagging next.
@@ -8,15 +22,16 @@ exports.list_paging_next = function (req, res) {
     console.log('allcheques: list');
     var id = req.params.id;
 
-    console.log('id:  ' +id );
-    client.execute("SELECT  id,bank,amount FROM promizes WHERE id < "+ id + "LIMIT 10 ALLOW FILTERING", [], function (err, result) {
-        if (err) {""
+    console.log('id:  ' + id);
+    client.execute("SELECT  id,bank,amount FROM promizes WHERE id < " + id + "LIMIT 10 ALLOW FILTERING", [], function (err, result) {
+        if (err) {
+            ""
             console.log('allcheques: list err:', err);
             res.status(404).send({msg: err});
         } else {
             console.log('allcheques1: list succ:', result.rows);
             res.status(200).send(result.rows);
-           // res.render('allcheques', {page_title: "All Cheques", data: result.rows})
+            // res.render('allcheques', {page_title: "All Cheques", data: result.rows})
 
         }
     });
@@ -98,6 +113,57 @@ exports.list_search = function (req, res) {
     console.log(input);
     console.log('promizes: list_search');
     if (validate(input.id)) {
+        client_elasticsearch.search({
+            index: 'promizes',
+
+            body: {
+                query: {
+                    bool: {
+                        must: [
+                            {
+                               /* term: {bank: "sampath"}*/
+                                term: {id: input.id}
+                            }
+                        ]
+                    }
+
+                }
+            }
+        }).then(function (resp) {
+            var hits = resp.hits.hits;
+           // var results = "[ Row "+ resp.hits.hits[0]._source+"]";
+            var str=[];
+            for(var i=0; i<resp.hits.hits.length;i++)
+            {
+                 str.push(resp.hits.hits[i]._source );
+            }
+            console.log(resp.hits.hits);
+            console.log(str);
+
+            res.render('allpromizes', {page_title: "Promizes Details", data: str});
+
+        }, function (err) {
+            console.trace(err.message);
+        });
+    }
+    else {
+        var result = [];
+        res.render('allpromizes', {page_title: "Promizes Details", data: result});
+    }
+};
+
+/*
+exports.list_search = function (req, res) {
+
+    // var id = req.params.id;
+    var input = JSON.parse(JSON.stringify(req.body));
+
+    var validate = require('uuid-validate');
+
+
+    console.log(input);
+    console.log('promizes: list_search');
+    if (validate(input.id)) {
         client.execute("SELECT id,bank,amount from promizes WHERE id = " + input.id + " ALLOW FILTERING", [], function (err, result) {
             if (err) {
                 console.log('promizes: search one err:', err);
@@ -106,6 +172,8 @@ exports.list_search = function (req, res) {
                 //  allblocks();
             } else {
                 console.log('promizes: search one succ:');
+                console.log(result.rows.length);
+
                 res.render('allpromizes', {page_title: "Promizes Details", data: result.rows});
             }
         });
@@ -116,11 +184,12 @@ exports.list_search = function (req, res) {
         res.render('allpromizes', {page_title: "Promizes Details", data:result});
     }
 };
+*/
 
 exports.transactions_for_promize = function (req, res) {
 
     var id = req.params.id;
-    client.execute("select id,bank,promize_amount,from_account,to_account,timestamp from transactions where promize_id=" +id+ " ALLOW FILTERING", [], function (err, result) {
+    client.execute("select id,bank,promize_amount,from_account,to_account,timestamp from transactions where promize_id=" + id + " ALLOW FILTERING", [], function (err, result) {
         if (err) {
             console.log('alltransaction_promize: list err:', err);
             res.status(404).send({msg: err});

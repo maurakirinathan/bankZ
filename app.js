@@ -46,13 +46,19 @@ var properties = PropertiesReader('PropertiesReader.js');
  var host =  properties.get('db.host');
  var port = properties.get('db.port');
  var keyspace = properties.get('db.keyspace');
+var elasassandra_port = properties.get('db.elasassandra');
 
 
 /*
 var host =  process.env.CASSANDRA_HOST;
 var port = process.env.CASSANDRA_PORT;
 var keyspace = process.env.CASSANDRA_KEYSPACE;
+var elasassandra_port = process.env.ELASASSANDRA_PORT;
 */
+/*var elasticsearch = require('elasticsearch');
+var client = new elasticsearch.Client({
+    host: host+':'+elasassandra_port,
+});*/
 
 
 var client = new cassandra.Client({contactPoints: [host+':'+port], keyspace: keyspace});
