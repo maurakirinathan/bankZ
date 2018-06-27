@@ -151,6 +151,20 @@ app.get('/login', function (req, res) {
 
 
     }
+    else if(req.query.username === "admin1" && req.query.password === "admin1") {
+        req.session.user = "admin1";
+        req.session.admin = true;
+        res.redirect("/allblocks");
+
+
+    }
+    else if(req.query.username === "admin2" && req.query.password === "admin2") {
+        req.session.user = "admin2";
+        req.session.admin = true;
+        res.redirect("/allblocks");
+
+
+    }
 });
 
 // Logout endpoint
